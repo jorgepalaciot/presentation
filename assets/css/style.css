@@ -130,7 +130,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--text); font-weight: 600; }
 
 /* ---------------- Hero ---------------- */
 
-.hero { padding-block: var(--sp-6) var(--sp-5); }
+.hero { padding-block: var(--sp-2) var(--sp-5); }
 .hero .container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--sp-5); align-items: center; }
 
 @media (max-width: 860px) {
