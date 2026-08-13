@@ -13,10 +13,10 @@
       var nav = (navigator.language || navigator.userLanguage || "en").toLowerCase();
       lang = nav.indexOf("es") === 0 ? "es" : "en";
     }
-    window.location.replace("/" + lang + "/");
+    window.location.replace(lang + "/");
   })();
 </script>
-<meta http-equiv="refresh" content="1; url=/en/">
+<meta http-equiv="refresh" content="1; url=en/">
 <style>
   body{font-family:-apple-system,sans-serif;background:#faf8f4;color:#211f1a;
        display:flex;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center}
@@ -26,9 +26,9 @@
 <body>
   <noscript>
     <p>Choose your language / Elige tu idioma:<br>
-      <a href="/en/">English</a> &nbsp;·&nbsp; <a href="/es/">Español</a>
+      <a href="en/">English</a> &nbsp;·&nbsp; <a href="es/">Español</a>
     </p>
   </noscript>
-  <p>Redirecting… / Redirigiendo…<br><a href="/en/">English</a> · <a href="/es/">Español</a></p>
+  <p>Redirecting… / Redirigiendo…<br><a href="en/">English</a> · <a href="es/">Español</a></p>
 </body>
 </html>
