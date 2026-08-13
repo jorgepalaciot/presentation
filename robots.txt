@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/img/original.png
+
+Sitemap: https://jorgepalaciotello.com/sitemap.xml

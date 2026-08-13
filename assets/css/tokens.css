@@ -1,0 +1,127 @@
+/* ===========================================================
+   DESIGN TOKENS — Jorge Palacio Tello
+   Palette derived from the profile photo:
+   shirt (#9BA0B5 dusty blue) -> accent
+   wall  (#D2CBBF warm greige) -> background family
+   =========================================================== */
+
+:root {
+  color-scheme: light;
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Hanken Grotesk", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+  --step--1: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+  --step-2: clamp(1.5rem, 1.3rem + 1vw, 1.9rem);
+  --step-3: clamp(2rem, 1.7rem + 1.5vw, 2.75rem);
+  --step-4: clamp(2.6rem, 2.1rem + 2.4vw, 4rem);
+
+  --sp-1: 0.5rem;
+  --sp-2: 0.85rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2.5rem;
+  --sp-5: 4rem;
+  --sp-6: 6.5rem;
+  --sp-7: 9rem;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --max-content: 76rem;
+  --max-text: 42rem;
+
+  /* ---- Light theme (default) ---- */
+  --bg: #faf8f4;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f1eee6;
+  --border: #e4dfd3;
+  --border-strong: #d3cdbd;
+
+  --text: #211f1a;
+  --text-muted: #6d6a60;
+  --text-faint: #9c9789;
+
+  --accent: #4f6483;
+  --accent-strong: #38455c;
+  --accent-soft: #e9edf3;
+  --accent-soft-border: #d3dbe6;
+
+  --tag-green-bg: #eaf1e6;
+  --tag-green-text: #3f5c39;
+  --tag-amber-bg: #f8f0dc;
+  --tag-amber-text: #8a5e16;
+  --tag-blue-bg: #e7edf3;
+  --tag-blue-text: #384f6c;
+
+  --shadow-1: 0 1px 2px rgba(33, 31, 26, 0.04);
+  --shadow-2: 0 6px 20px -8px rgba(33, 31, 26, 0.12);
+
+  --focus-ring: #4f6483;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #16150f;
+  --bg-raised: #201e18;
+  --bg-sunken: #100f0b;
+  --border: #33302a;
+  --border-strong: #47433a;
+
+  --text: #ece8e0;
+  --text-muted: #b0aa9c;
+  --text-faint: #7d7869;
+
+  --accent: #9db0c7;
+  --accent-strong: #c4d1e0;
+  --accent-soft: #232a34;
+  --accent-soft-border: #313d4b;
+
+  --tag-green-bg: #24301f;
+  --tag-green-text: #a9c7a0;
+  --tag-amber-bg: #332b18;
+  --tag-amber-text: #e0bd7c;
+  --tag-blue-bg: #1f2833;
+  --tag-blue-text: #a9c0d9;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-2: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+
+  --focus-ring: #9db0c7;
+}
+
+/* Respect OS preference automatically when no manual choice stored */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #16150f;
+    --bg-raised: #201e18;
+    --bg-sunken: #100f0b;
+    --border: #33302a;
+    --border-strong: #47433a;
+
+    --text: #ece8e0;
+    --text-muted: #b0aa9c;
+    --text-faint: #7d7869;
+
+    --accent: #9db0c7;
+    --accent-strong: #c4d1e0;
+    --accent-soft: #232a34;
+    --accent-soft-border: #313d4b;
+
+    --tag-green-bg: #24301f;
+    --tag-green-text: #a9c7a0;
+    --tag-amber-bg: #332b18;
+    --tag-amber-text: #e0bd7c;
+    --tag-blue-bg: #1f2833;
+    --tag-blue-text: #a9c0d9;
+
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-2: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+    --focus-ring: #9db0c7;
+  }
+}
