@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://jorgepalaciot.github.io/presentation/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jorgepalaciot.github.io/presentation/en/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jorgepalaciot.github.io/presentation/es/"/>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://jorgepalaciot.github.io/presentation/es/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jorgepalaciot.github.io/presentation/en/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jorgepalaciot.github.io/presentation/es/"/>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://jorgepalaciot.github.io/presentation/en/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jorgepalaciot.github.io/presentation/en/blog/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jorgepalaciot.github.io/presentation/es/blog/"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jorgepalaciot.github.io/presentation/es/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jorgepalaciot.github.io/presentation/en/blog/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://jorgepalaciot.github.io/presentation/es/blog/"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://jorgepalaciot.github.io/presentation/</loc></url>
+  <url><loc>https://jorgepalaciot.github.io/presentation/es/</loc></url>
+  <url><loc>https://jorgepalaciot.github.io/presentation/en/</loc></url>
 </urlset>

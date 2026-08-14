@@ -1,8 +1,5 @@
 /* ===========================================================
-   DESIGN TOKENS — Jorge Palacio Tello
-   Palette derived from the profile photo:
-   shirt (#9BA0B5 dusty blue) -> accent
-   wall  (#D2CBBF warm greige) -> background family
+   DESIGN TOKENS
    =========================================================== */
 
 :root {
@@ -34,7 +31,6 @@
   --max-content: 76rem;
   --max-text: 42rem;
 
-  /* ---- Light theme (default) ---- */
   --bg: #faf8f4;
   --bg-raised: #ffffff;
   --bg-sunken: #f1eee6;
@@ -94,7 +90,6 @@
   --focus-ring: #9db0c7;
 }
 
-/* Respect OS preference automatically when no manual choice stored */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
@@ -103,23 +98,19 @@
     --bg-sunken: #100f0b;
     --border: #33302a;
     --border-strong: #47433a;
-
     --text: #ece8e0;
     --text-muted: #b0aa9c;
     --text-faint: #7d7869;
-
     --accent: #9db0c7;
     --accent-strong: #c4d1e0;
     --accent-soft: #232a34;
     --accent-soft-border: #313d4b;
-
     --tag-green-bg: #24301f;
     --tag-green-text: #a9c7a0;
     --tag-amber-bg: #332b18;
     --tag-amber-text: #e0bd7c;
     --tag-blue-bg: #1f2833;
     --tag-blue-text: #a9c0d9;
-
     --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
     --shadow-2: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
     --focus-ring: #9db0c7;

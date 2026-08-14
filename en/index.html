@@ -25,7 +25,6 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 
 <script>
-  /* Apply stored theme before paint to avoid flash */
   (function () {
     var t = localStorage.getItem("jpt-theme");
     if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
@@ -40,8 +39,8 @@
 <header class="site-header">
   <div class="container">
     <a class="brand" href="./">
-      <span class="brand-mark"><img src="../assets/img/jorge-square.jpg" alt="" width="28" height="28"></span>
-      Jorge Palacio Tello
+      <span class="brand-mark"><img data-site-photo-square src="../assets/img/jorge-square.jpg" alt="" width="28" height="28"></span>
+      <span data-site-name>Jorge Palacio Tello</span>
     </a>
     <nav class="primary-nav" aria-label="Primary">
       <div class="nav-links">
@@ -81,12 +80,12 @@
           <span class="tag tag-amber">Advanced Excel</span>
         </div>
         <div class="hero-actions reveal">
-          <a class="btn btn-primary" href="mailto:REPLACE_WITH_EMAIL@example.com">Contact me</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn btn-primary" data-site-email href="mailto:REPLACE_WITH_EMAIL@example.com">Contact me</a>
+          <a class="btn btn-ghost" data-site-linkedin href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
       </div>
       <div class="hero-portrait reveal">
-        <img src="../assets/img/jorge-palacio-tello.jpg" alt="Portrait of Jorge Palacio Tello" width="900" height="1352">
+        <img data-site-photo src="../assets/img/jorge-palacio-tello.jpg" alt="Portrait of Jorge Palacio Tello" width="900" height="1352">
       </div>
     </div>
   </section>
@@ -231,8 +230,8 @@
       <p class="section-label reveal" style="justify-content:center">Get in touch</p>
       <h2 class="reveal">Open to process improvement, Lean and operations roles — anywhere.</h2>
       <div class="cta-actions reveal">
-        <a class="btn btn-primary" href="mailto:REPLACE_WITH_EMAIL@example.com">Email me</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-primary" data-site-email href="mailto:REPLACE_WITH_EMAIL@example.com">Email me</a>
+        <a class="btn btn-ghost" data-site-linkedin href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -241,16 +240,16 @@
 
 <footer class="site-footer">
   <div class="container">
-    <span>© <span id="year"></span> Jorge Palacio Tello</span>
+    <span>© <span id="year"></span> <span data-site-name>Jorge Palacio Tello</span></span>
     <div class="footer-links">
-      <a href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:REPLACE_WITH_EMAIL@example.com">Email</a>
+      <a data-site-linkedin href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">LinkedIn</a>
+      <a data-site-email href="mailto:REPLACE_WITH_EMAIL@example.com">Email</a>
       <a href="../es/">Español</a>
     </div>
   </div>
 </footer>
 
+<script src="../assets/js/config.js"></script>
 <script src="../assets/js/main.js"></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
