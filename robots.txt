@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jorgepalaciot.github.io/presentation/sitemap.xml
