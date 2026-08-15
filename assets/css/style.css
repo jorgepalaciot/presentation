@@ -174,10 +174,17 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 
 /* ---------------- Mobile nav (hamburger) ---------------- */
 
-.nav-toggle { display: none; position: relative; }
+/* Compound selector required: .icon-btn alone sets display:inline-flex
+   unconditionally and is declared later in this file than a plain
+   .nav-toggle rule, so same-specificity cascade order made .icon-btn
+   win and kept the button visible above 720px regardless of the media
+   query below. Two classes on the selector raises specificity above
+   .icon-btn's single-class rule, so this wins unconditionally,
+   independent of where either rule sits in the file. */
+.icon-btn.nav-toggle { display: none; position: relative; }
 
 @media (max-width: 720px) {
-  .nav-toggle { display: inline-flex; }
+  .icon-btn.nav-toggle { display: inline-flex; }
 }
 
 .nav-toggle .icon-close { display: none; }
