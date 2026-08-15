@@ -31,6 +31,30 @@
     localStorage.setItem("jpt-lang", "es");
   })();
 </script>
+
+<!--
+  Datos estructurados de Persona — solo hechos ya presentes en esta
+  página. Amplía "alumniOf" / "knowsAbout" únicamente cuando el mismo
+  dato también aparezca en el texto visible de arriba.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jorge Palacio Tello",
+  "url": "https://jorgepalaciot.github.io/presentation/es/",
+  "image": "https://jorgepalaciot.github.io/presentation/assets/img/jorge-square.jpg",
+  "jobTitle": "Ingeniero Industrial",
+  "description": "Ingeniero Industrial especializado en Mejora de Procesos y Lean Management, con formación en sistemas de calidad (ISO 9001, HACCP) y fundamentos de BPM.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Lima", "addressCountry": "PE" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Universidad Católica de Santa María" },
+    { "@type": "CollegeOrUniversity", "name": "Universidad ESAN" }
+  ],
+  "knowsAbout": ["Mejora de Procesos", "Lean Management", "Mejora Continua", "ISO 9001", "HACCP", "Business Process Management", "Excel Avanzado"],
+  "sameAs": ["https://www.linkedin.com/in/jorgepalaciot/"]
+}
+</script>
 </head>
 <body data-has-hero="true">
 
