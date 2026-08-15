@@ -32,6 +32,31 @@
     localStorage.setItem("jpt-lang", "en");
   })();
 </script>
+
+<!--
+  Person structured data — only facts already stated on this page.
+  Extend "alumniOf" / "knowsAbout" only once the same claim is also
+  visible in the page copy above; keep this in sync with what a visitor
+  can actually verify by reading the page, not ahead of it.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jorge Palacio Tello",
+  "url": "https://jorgepalaciot.github.io/presentation/en/",
+  "image": "https://jorgepalaciot.github.io/presentation/assets/img/jorge-square.jpg",
+  "jobTitle": "Industrial Engineer",
+  "description": "Industrial Engineer specialized in Process Improvement and Lean Management, with a background in quality systems (ISO 9001, HACCP) and BPM fundamentals.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Lima", "addressCountry": "PE" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Universidad Católica de Santa María" },
+    { "@type": "CollegeOrUniversity", "name": "ESAN University" }
+  ],
+  "knowsAbout": ["Process Improvement", "Lean Management", "Continuous Improvement", "ISO 9001", "HACCP", "Business Process Management", "Advanced Excel"],
+  "sameAs": ["https://www.linkedin.com/in/jorgepalaciot/"]
+}
+</script>
 </head>
 <body data-has-hero="true">
 
