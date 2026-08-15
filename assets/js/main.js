@@ -2,6 +2,7 @@
  * Jorge Palacio Tello — site scripts
  * Theme toggle (persisted). Header transparency over full-bleed hero
  * (pages with body[data-has-hero="true"]). Reveal-on-scroll.
+ * Article pages: reading-progress bar + auto-generated table of contents.
  */
 
 (function () {
@@ -89,6 +90,69 @@
         }, 200);
       });
     }
+
+    // ---- Article pages: reading progress + auto table of contents ----
+    // Only runs where the markup exists (post pages). The TOC is built
+    // from the article's real <h2> elements — never hardcoded — so it
+    // can't drift out of sync with the actual (sometimes unfinished)
+    // content.
+    var article = document.querySelector("article.prose");
+    var progressBar = document.getElementById("readingProgress");
+
+    if (article && progressBar) {
+      var updateProgress = function () {
+        var rect = article.getBoundingClientRect();
+        var total = rect.height - window.innerHeight;
+        var scrolled = Math.min(Math.max(-rect.top, 0), Math.max(total, 0));
+        var pct = total > 0 ? (scrolled / total) * 100 : 0;
+        progressBar.style.width = pct + "%";
+      };
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("resize", updateProgress);
+      updateProgress();
+    }
+
+    var tocNav = document.getElementById("toc");
+
+    if (article && tocNav) {
+      var headings = article.querySelectorAll("h2");
+
+      if (headings.length) {
+        var usedIds = {};
+        headings.forEach(function (h, i) {
+          if (!h.id) {
+            var slug = h.textContent
+              .toLowerCase()
+              .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+              .replace(/[^a-z0-9\s-]/g, "")
+              .trim()
+              .replace(/\s+/g, "-") || ("section-" + i);
+            if (usedIds[slug]) slug += "-" + i;
+            usedIds[slug] = true;
+            h.id = slug;
+          }
+          var a = document.createElement("a");
+          a.href = "#" + h.id;
+          a.textContent = h.textContent;
+          tocNav.appendChild(a);
+        });
+
+        if ("IntersectionObserver" in window) {
+          var headingIo = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                var link = tocNav.querySelector('a[href="#' + entry.target.id + '"]');
+                if (link) link.classList.toggle("active", entry.isIntersecting);
+              });
+            },
+            { rootMargin: "-20% 0px -70% 0px" }
+          );
+          headings.forEach(function (h) { headingIo.observe(h); });
+        }
+      } else {
+        var railCard = tocNav.closest(".tick-card");
+        if (railCard) railCard.style.display = "none";
+      }
+    }
   });
 })();
-

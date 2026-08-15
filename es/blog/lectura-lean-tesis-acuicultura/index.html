@@ -67,6 +67,8 @@
 
 <a class="visually-hidden" href="#main">Saltar al contenido</a>
 
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
 <header class="site-header">
   <div class="container">
     <a class="brand" href="../../../es/">
@@ -96,50 +98,78 @@
 
 <main id="main">
   <div class="container">
-    <p class="breadcrumb reveal">
-      <a href="../">Blog</a> <span>/</span> <span>Casos de Estudio</span>
-    </p>
+    <div class="post-grid">
 
-    <header class="post-header reveal">
-      <h1>Una lectura Lean de mi tesis de acuicultura</h1>
-      <div class="post-meta">
-        <span class="draft-badge">Borrador — sin publicar</span>
-        <span>Casos de Estudio</span>
-        <span>·</span>
-        <span>~6 min de lectura</span>
+      <div class="post-main">
+        <p class="breadcrumb reveal">
+          <a href="../">Blog</a> <span>/</span> <span>Casos de Estudio</span>
+        </p>
+
+        <header class="post-header reveal">
+          <h1>Una lectura Lean de mi tesis de acuicultura</h1>
+          <div class="post-meta">
+            <span class="draft-badge">Borrador — sin publicar</span>
+            <span>Casos de Estudio</span>
+            <span>·</span>
+            <span>~6 min de lectura</span>
+          </div>
+        </header>
+
+        <article class="prose reveal">
+
+          <p class="lead-p">En 2017 escribí mi tesis de ingeniería industrial como un plan de negocio completo: una planta de acuicultura marina de lenguado (<em>Paralichthys adspersus</em>) en la costa centro del Perú. Releyéndola hoy con una mirada Lean y de mejora de procesos, algunas partes se sostienen — y otras las abordaría distinto.</p>
+
+          <h2>Qué fue realmente la tesis</h2>
+          <p>La pregunta central era si resultaba técnica y económicamente factible cultivar lenguado para el segmento de restaurantes marinos premium de Lima, dado que la oferta de pesca extractiva cubría apenas cerca del 16% de la demanda. El plan ubicaba la planta en Chincha Alta, cerca del mercado objetivo, y desarrollaba el ciclo productivo completo — reproductores, hatchery, alevinaje, engorde, cosecha y procesamiento primario — como una sola operación continua.</p>
+          <p>La evaluación financiera usó un análisis de sensibilidad Montecarlo (10,000 simulaciones) sobre las variables críticas — principalmente costo de alimento y precio de venta — que arrojó un VAN positivo de S/. 6,728,598 y un TIR de 21%, con 96.87% de probabilidad de que el VAN se mantuviera positivo a un nivel de confianza del 95%.</p>
+
+          <h2>Dónde ya aparecía pensamiento de procesos</h2>
+          <p>Aunque en su momento no lo llamé "Lean", partes de la tesis ya eran trabajo de procesos:</p>
+          <ul>
+            <li><strong>Diagramas de flujo de procesos (DOP/DAP)</strong> para las operaciones de hatchery, producción de alimento vivo y la línea de cosecha a empaquetado — mapeando cada paso antes de dimensionar equipos o personal.</li>
+            <li><strong>Dimensionamiento de planta con el método Guerchet</strong> para calcular el área real necesaria por puesto de trabajo, en vez de estimar el layout a ojo.</li>
+            <li><strong>Un programa de producción diseñado en torno al uso de tanques</strong> — escalonando cuatro lotes de producción en paralelo específicamente para evitar tanques ociosos entre etapas de crecimiento, lo cual es una aplicación directa, aunque sin ese nombre, de reducir desperdicio (capacidad ociosa) en un sistema de activos fijos.</li>
+          </ul>
+
+          <div class="todo-block">
+            <strong>[Escribe esta sección] — Qué haría diferente hoy</strong>
+            Esta parte tiene que ser tu propio juicio, no una lista genérica de "lecciones aprendidas". Algunas preguntas honestas para arrancar: mirando hoy la programación por uso de tanques, ¿se sostiene como pensamiento realmente Lean, o era solo optimización de hoja de cálculo disfrazada? ¿Dónde trató la tesis la variabilidad (costo de alimento, tasas de mortalidad entre etapas) como un riesgo financiero a modelar, en vez de un problema de proceso a reducir en la fuente — y qué habría cambiado un enfoque real de causa raíz / kaizen en el diseño de la planta, no solo en los números alrededor? ¿Cuál es la decisión de proceso más importante de esa planta que rehatías primero si tuvieras que defenderla frente a un panel de contratación hoy?
+          </div>
+
+          <div class="todo-block">
+            <strong>[Escribe esta sección] — Por qué esto importa para los roles a los que aplicas</strong>
+            Conéctalo explícitamente: ¿qué demuestra revisar esta tesis sobre cómo abordas la mejora de procesos ahora, que un lector (reclutador, hiring manager) debería llevarse? Una o dos oraciones, específicas — no "esto demuestra mi pasión por la mejora continua".
+          </div>
+
+        </article>
+
+        <div class="post-footer reveal">
+          <a class="btn btn-ghost" href="../">← Volver a todos los artículos</a>
+        </div>
       </div>
-    </header>
 
-    <article class="prose reveal">
+      <aside class="post-rail">
+        <div class="tick-card reveal">
+          <p class="rail-label">En esta nota</p>
+          <nav class="toc" id="toc" aria-label="Índice de contenidos"></nav>
+        </div>
 
-      <p class="lead-p">En 2017 escribí mi tesis de ingeniería industrial como un plan de negocio completo: una planta de acuicultura marina de lenguado (<em>Paralichthys adspersus</em>) en la costa centro del Perú. Releyéndola hoy con una mirada Lean y de mejora de procesos, algunas partes se sostienen — y otras las abordaría distinto.</p>
+        <div class="tick-card reveal">
+          <p class="rail-label">Detalles del post</p>
+          <ul class="rail-meta-list">
+            <li><span class="k">Estado</span><span class="v">Borrador</span></li>
+            <li><span class="k">Sección</span><span class="v">Casos de Estudio</span></li>
+            <li><span class="k">Lectura</span><span class="v">~6 min</span></li>
+            <li><span class="k">Idioma</span><span class="v">ES</span></li>
+          </ul>
+          <div class="rail-actions">
+            <a href="../">← Todos los artículos</a>
+            <a href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">Seguir en LinkedIn ↗</a>
+            <a href="mailto:REPLACE_WITH_EMAIL@example.com">Escríbeme</a>
+          </div>
+        </div>
+      </aside>
 
-      <h2>Qué fue realmente la tesis</h2>
-      <p>La pregunta central era si resultaba técnica y económicamente factible cultivar lenguado para el segmento de restaurantes marinos premium de Lima, dado que la oferta de pesca extractiva cubría apenas cerca del 16% de la demanda. El plan ubicaba la planta en Chincha Alta, cerca del mercado objetivo, y desarrollaba el ciclo productivo completo — reproductores, hatchery, alevinaje, engorde, cosecha y procesamiento primario — como una sola operación continua.</p>
-      <p>La evaluación financiera usó un análisis de sensibilidad Montecarlo (10,000 simulaciones) sobre las variables críticas — principalmente costo de alimento y precio de venta — que arrojó un VAN positivo de S/. 6,728,598 y un TIR de 21%, con 96.87% de probabilidad de que el VAN se mantuviera positivo a un nivel de confianza del 95%.</p>
-
-      <h2>Dónde ya aparecía pensamiento de procesos</h2>
-      <p>Aunque en su momento no lo llamé "Lean", partes de la tesis ya eran trabajo de procesos:</p>
-      <ul>
-        <li><strong>Diagramas de flujo de procesos (DOP/DAP)</strong> para las operaciones de hatchery, producción de alimento vivo y la línea de cosecha a empaquetado — mapeando cada paso antes de dimensionar equipos o personal.</li>
-        <li><strong>Dimensionamiento de planta con el método Guerchet</strong> para calcular el área real necesaria por puesto de trabajo, en vez de estimar el layout a ojo.</li>
-        <li><strong>Un programa de producción diseñado en torno al uso de tanques</strong> — escalonando cuatro lotes de producción en paralelo específicamente para evitar tanques ociosos entre etapas de crecimiento, lo cual es una aplicación directa, aunque sin ese nombre, de reducir desperdicio (capacidad ociosa) en un sistema de activos fijos.</li>
-      </ul>
-
-      <div class="todo-block">
-        <strong>[Escribe esta sección] — Qué haría diferente hoy</strong>
-        Esta parte tiene que ser tu propio juicio, no una lista genérica de "lecciones aprendidas". Algunas preguntas honestas para arrancar: mirando hoy la programación por uso de tanques, ¿se sostiene como pensamiento realmente Lean, o era solo optimización de hoja de cálculo disfrazada? ¿Dónde trató la tesis la variabilidad (costo de alimento, tasas de mortalidad entre etapas) como un riesgo financiero a modelar, en vez de un problema de proceso a reducir en la fuente — y qué habría cambiado un enfoque real de causa raíz / kaizen en el diseño de la planta, no solo en los números alrededor? ¿Cuál es la decisión de proceso más importante de esa planta que rehatías primero si tuvieras que defenderla frente a un panel de contratación hoy?
-      </div>
-
-      <div class="todo-block">
-        <strong>[Escribe esta sección] — Por qué esto importa para los roles a los que aplicas</strong>
-        Conéctalo explícitamente: ¿qué demuestra revisar esta tesis sobre cómo abordas la mejora de procesos ahora, que un lector (reclutador, hiring manager) debería llevarse? Una o dos oraciones, específicas — no "esto demuestra mi pasión por la mejora continua".
-      </div>
-
-    </article>
-
-    <div class="post-footer reveal">
-      <a class="btn btn-ghost" href="../">← Volver a todos los artículos</a>
     </div>
   </div>
 </main>
