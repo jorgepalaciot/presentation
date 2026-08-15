@@ -691,6 +691,32 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 
 .prose strong { font-weight: 700; }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  gap: var(--sp-5);
+  align-items: start;
+  margin-top: var(--sp-4);
+}
+
+.about-portrait {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-2);
+  aspect-ratio: 4 / 5;
+  position: sticky;
+  top: calc(var(--sp-4) + 70px);
+}
+
+.about-portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-portrait { order: -1; max-width: 220px; margin-inline: auto; position: static; }
+}
+
+
 .todo-block {
   border: 1px dashed var(--tag-amber-text);
   background: var(--tag-amber-bg);
