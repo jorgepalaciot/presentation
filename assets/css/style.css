@@ -117,6 +117,27 @@ body[data-has-hero="true"] .site-header:not(.is-scrolled) {
   --hdr-btn-bg: transparent;
 }
 
+/* On pages with a full-bleed hero, the header must float over the hero
+   rather than push it down. Sticky still reserves its own height in the
+   document flow (a placeholder box stays even once the header itself is
+   pinned), so the hero was starting `header-height` px below the real
+   top of the viewport instead of y=0. Fixed removes the header from
+   flow entirely, so the hero (already 100svh) genuinely starts at y=0
+   with the header floating transparently on top, matching the
+   transparent/light-text state defined above.
+
+   Scoped to [data-has-hero="true"] only: the blog index and post pages
+   have no full-bleed hero, so their header stays `sticky` (inherited
+   from .site-header above) and continues to reserve its own space
+   correctly — no extra padding-top needed on those templates. */
+body[data-has-hero="true"] .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
 .site-header .container { display: flex; align-items: center; justify-content: space-between; padding-block: var(--sp-2); }
 
 .brand {
