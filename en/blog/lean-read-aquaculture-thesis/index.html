@@ -38,14 +38,6 @@
     localStorage.setItem("jpt-lang", "en");
   })();
 </script>
-<!--
-  BlogPosting structured data — intentionally has no datePublished yet
-  because the article isn't published (see the noindex tag above and the
-  unfinished [Write this section] blocks below). Add "datePublished" and
-  "dateModified" here in ISO 8601 once the article actually goes live —
-  don't invent a date before then, since that would misrepresent the post
-  to search engines that do respect noindex-adjacent JSON-LD.
--->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,8 +60,6 @@
 
 <a class="visually-hidden" href="#main">Skip to content</a>
 
-<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
-
 <header class="site-header">
   <div class="container">
     <a class="brand" href="../../../en/">
@@ -81,6 +71,7 @@
         <a href="../../../en/">Home</a>
         <a href="../../../en/#experience">Experience</a>
         <a href="../../../en/#certifications">Certifications</a>
+        <a href="../../projects/">Projects</a>
         <a href="../">Blog</a>
       </div>
       <div class="controls">
@@ -99,78 +90,50 @@
 
 <main id="main">
   <div class="container">
-    <div class="post-grid">
+    <p class="breadcrumb reveal">
+      <a href="../">Blog</a> <span>/</span> <span>Case Studies</span>
+    </p>
 
-      <div class="post-main">
-        <p class="breadcrumb reveal">
-          <a href="../">Blog</a> <span>/</span> <span>Case Studies</span>
-        </p>
+    <header class="post-header reveal">
+      <h1>A Lean read of my aquaculture thesis</h1>
+      <div class="post-meta">
+        <span class="draft-badge">Draft — not yet published</span>
+        <span>Case Studies</span>
+        <span>·</span>
+        <span>~6 min read</span>
+      </div>
+    </header>
 
-        <header class="post-header reveal">
-          <h1>A Lean read of my aquaculture thesis</h1>
-          <div class="post-meta">
-            <span class="draft-badge">Draft — not yet published</span>
-            <span>Case Studies</span>
-            <span>·</span>
-            <span>~6 min read</span>
-          </div>
-        </header>
+    <article class="prose reveal">
 
-        <article class="prose reveal">
+      <p class="lead-p">In 2017 I wrote my industrial engineering thesis as a full business plan: a marine flounder (<em>Paralichthys adspersus</em>) aquaculture plant on Peru's central coast. Reading it back now with a Lean and process-improvement lens, some of it holds up — and some of it I'd approach differently today.</p>
 
-          <p class="lead-p">In 2017 I wrote my industrial engineering thesis as a full business plan: a marine flounder (<em>Paralichthys adspersus</em>) aquaculture plant on Peru's central coast. Reading it back now with a Lean and process-improvement lens, some of it holds up — and some of it I'd approach differently today.</p>
+      <h2>What the thesis actually was</h2>
+      <p>The core question was whether it was technically and economically feasible to farm flounder for Lima's premium seafood restaurant segment, given that wild-catch supply covered only around 16% of demand. The plan located the plant in Chincha Alta, close to the target market, and worked through the full production cycle — broodstock, hatchery, nursery, grow-out, harvest, and primary processing — as one continuous operation.</p>
+      <p>The financial evaluation used a Monte Carlo sensitivity analysis (10,000 simulations) on the critical variables — mainly feed cost and sale price — which produced a positive NPV of S/. 6,728,598 and a 21% IRR, with a 96.87% probability of the NPV staying positive at a 95% confidence level.</p>
 
-          <h2>What the thesis actually was</h2>
-          <p>The core question was whether it was technically and economically feasible to farm flounder for Lima's premium seafood restaurant segment, given that wild-catch supply covered only around 16% of demand. The plan located the plant in Chincha Alta, close to the target market, and worked through the full production cycle — broodstock, hatchery, nursery, grow-out, harvest, and primary processing — as one continuous operation.</p>
-          <p>The financial evaluation used a Monte Carlo sensitivity analysis (10,000 simulations) on the critical variables — mainly feed cost and sale price — which produced a positive NPV of S/. 6,728,598 and a 21% IRR, with a 96.87% probability of the NPV staying positive at a 95% confidence level.</p>
+      <h2>Where process thinking already showed up</h2>
+      <p>Even without calling it "Lean" at the time, parts of the thesis were already process work:</p>
+      <ul>
+        <li><strong>Process flow diagrams (DOP/DAP)</strong> for hatchery operations, live-feed production, and the harvest-to-packaging line — mapping each step before sizing equipment or staffing.</li>
+        <li><strong>Facility sizing via the Guerchet method</strong> to calculate the actual area needed per workstation, instead of guessing at plant layout.</li>
+        <li><strong>A production schedule built around tank utilization</strong> — staggering four parallel production batches specifically to avoid idle tanks between growth phases, which is a direct, if unlabeled, application of reducing waste (idle capacity) in a fixed-asset system.</li>
+      </ul>
 
-          <h2>Where process thinking already showed up</h2>
-          <p>Even without calling it "Lean" at the time, parts of the thesis were already process work:</p>
-          <ul>
-            <li><strong>Process flow diagrams (DOP/DAP)</strong> for hatchery operations, live-feed production, and the harvest-to-packaging line — mapping each step before sizing equipment or staffing.</li>
-            <li><strong>Facility sizing via the Guerchet method</strong> to calculate the actual area needed per workstation, instead of guessing at plant layout.</li>
-            <li><strong>A production schedule built around tank utilization</strong> — staggering four parallel production batches specifically to avoid idle tanks between growth phases, which is a direct, if unlabeled, application of reducing waste (idle capacity) in a fixed-asset system.</li>
-          </ul>
-
-          <div class="todo-block">
-            <strong>[Write this section] — What I'd do differently today</strong>
-            This is the part that has to be your own judgment, not a generic "lessons learned" list. Some honest starting questions: Looking at the tank-utilization scheduling now, does it hold up as genuinely Lean, or was it just spreadsheet optimization dressed up as process thinking? Where did the thesis treat variability (feed cost, mortality rates between production stages) as a financial risk to model, rather than a process problem to reduce at the source — and what would a real root-cause / kaizen approach have changed about the plant design itself, not just the numbers around it? What's the single biggest process decision in that plant you'd redo first if you had to defend it in front of a hiring panel today?
-          </div>
-
-          <div class="todo-block">
-            <strong>[Write this section] — Why this matters for the roles you're applying to</strong>
-            Connect it explicitly: what does revisiting this thesis demonstrate about how you approach process improvement now, that a reader (recruiter, hiring manager) should take away? One or two sentences, specific — not "this shows my passion for continuous improvement."
-          </div>
-
-        </article>
-
-        <div class="post-footer reveal">
-          <a class="btn btn-ghost" href="../">← Back to all articles</a>
-        </div>
+      <div class="todo-block">
+        <strong>[Write this section] — What I'd do differently today</strong>
+        This is the part that has to be your own judgment, not a generic "lessons learned" list. Some honest starting questions: Looking at the tank-utilization scheduling now, does it hold up as genuinely Lean, or was it just spreadsheet optimization dressed up as process thinking? Where did the thesis treat variability (feed cost, mortality rates between production stages) as a financial risk to model, rather than a process problem to reduce at the source — and what would a real root-cause / kaizen approach have changed about the plant design itself, not just the numbers around it? What's the single biggest process decision in that plant you'd redo first if you had to defend it in front of a hiring panel today?
       </div>
 
-      <aside class="post-rail">
-        <div class="tick-card reveal">
-          <p class="rail-label">On this page</p>
-          <nav class="toc" id="toc" aria-label="Table of contents"></nav>
-        </div>
+      <div class="todo-block">
+        <strong>[Write this section] — Why this matters for the roles you're applying to</strong>
+        Connect it explicitly: what does revisiting this thesis demonstrate about how you approach process improvement now, that a reader (recruiter, hiring manager) should take away? One or two sentences, specific — not "this shows my passion for continuous improvement."
+      </div>
 
-        <div class="tick-card reveal">
-          <p class="rail-label">Post details</p>
-          <ul class="rail-meta-list">
-            <li><span class="k">Status</span><span class="v">Draft</span></li>
-            <li><span class="k">Section</span><span class="v">Case Studies</span></li>
-            <li><span class="k">Read time</span><span class="v">~6 min</span></li>
-            <li><span class="k">Language</span><span class="v">EN</span></li>
-          </ul>
-          <div class="rail-actions">
-            <a href="../">← All articles</a>
-            <a href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">Follow on LinkedIn ↗</a>
-            <a href="mailto:REPLACE_WITH_EMAIL@example.com">Email me</a>
-          </div>
-        </div>
-      </aside>
+    </article>
 
+    <div class="post-footer reveal">
+      <a class="btn btn-ghost" href="../">← Back to all articles</a>
     </div>
   </div>
 </main>
