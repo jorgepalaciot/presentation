@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flounder Aquaculture Plant — Business Case — Jorge Palacio Tello</title>
+<meta name="description" content="A 2017 industrial engineering thesis as a business case: is it feasible to build a marine flounder aquaculture plant for Lima's premium restaurant market? Process design, facility sizing and Monte Carlo financial evaluation.">
+<meta name="robots" content="noindex"> <!-- DRAFT: remove this line once Learning / Next step sections are finished -->
+<link rel="canonical" href="https://jorgepalaciot.github.io/presentation/en/projects/aquaculture-plant-business-case/">
+<link rel="alternate" hreflang="es" href="https://jorgepalaciot.github.io/presentation/es/proyectos/caso-de-negocio-planta-acuicultura/">
+<link rel="alternate" hreflang="en" href="https://jorgepalaciot.github.io/presentation/en/projects/aquaculture-plant-business-case/">
+<link rel="icon" href="../../../assets/img/jorge-square.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/tokens.css">
+<link rel="stylesheet" href="../../../assets/css/style.css">
+<script>
+  (function () {
+    var t = localStorage.getItem("jpt-theme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    localStorage.setItem("jpt-lang", "en");
+  })();
+</script>
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../../en/">
+      <span class="brand-mark"><img src="../../../assets/img/jorge-square.jpg" alt="" width="28" height="28"></span>
+      Jorge Palacio Tello
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <div class="nav-links">
+        <a href="../../../en/">Home</a>
+        <a href="../">Projects</a>
+        <a href="../../../en/#experience">Experience</a>
+        <a href="../../../en/#certifications">Certifications</a>
+        <a href="../../../en/blog/">Blog</a>
+      </div>
+      <div class="controls">
+        <div class="lang-switch">
+          <a href="./" aria-current="true">EN</a>
+          <a href="../../../es/proyectos/caso-de-negocio-planta-acuicultura/">ES</a>
+        </div>
+        <button class="icon-btn theme-toggle" data-theme-toggle type="button" aria-label="Toggle dark mode">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <p class="breadcrumb reveal">
+      <a href="../">Projects</a> <span>/</span> <span>Business Plan Thesis</span>
+    </p>
+
+    <header class="post-header reveal">
+      <h1>Flounder Aquaculture Plant — Business Case</h1>
+      <div class="post-meta">
+        <span class="draft-badge">Draft — Learning &amp; Next step pending</span>
+        <span>Business Plan Thesis</span>
+        <span>·</span>
+        <span>2017</span>
+      </div>
+    </header>
+
+    <article class="prose reveal">
+
+      <p class="lead-p">Undergraduate thesis project (B.Sc. Industrial Engineering, UCSM, 2017), structured as a full business case rather than a narrow feasibility note: a marine flounder (<em>Paralichthys adspersus</em>) aquaculture plant on Peru's central coast. This page walks through the case itself. For a separate, more personal look at what I'd change about the process thinking behind it today, see the <a href="../../blog/lean-read-aquaculture-thesis/">companion blog article</a>.</p>
+
+      <h2>Problem</h2>
+      <p>Wild-catch supply covered only around 16% of demand for flounder in Lima's premium seafood restaurant segment. The question the thesis had to answer: is it technically and economically feasible to close that gap with a dedicated aquaculture plant, rather than relying on extractive fishing?</p>
+
+      <h2>Context</h2>
+      <p>The thesis was scoped as a complete business plan, not just a feasibility memo. That meant a market study, plant design, an environmental impact assessment and a financial evaluation, all built around a single continuous production cycle — broodstock, hatchery, nursery, grow-out, harvest and primary processing — sited at Chincha Alta, close to the target market.</p>
+
+      <h2>Approach</h2>
+      <p>Three deliberate process-engineering choices shaped how the plan was built, not just how it was justified financially:</p>
+      <ul>
+        <li><strong>Process flow diagrams (DOP/DAP)</strong> for hatchery operations, live-feed production and the harvest-to-packaging line, mapped before any equipment or staffing was sized.</li>
+        <li><strong>Facility sizing via the Guerchet method</strong>, to calculate the actual area needed per workstation instead of estimating the layout by eye.</li>
+        <li><strong>Monte Carlo sensitivity analysis (10,000 simulations)</strong> on the two variables that actually drove the plan's risk — feed cost and sale price — instead of a single-point financial estimate.</li>
+      </ul>
+
+      <h2>Process design</h2>
+      <p>The production schedule staggered four parallel production batches specifically to avoid idle tanks between growth phases — a direct, if unlabeled at the time, application of reducing idle capacity in a fixed-asset system.</p>
+
+      <h2>Result</h2>
+      <p>Under the modeled conditions, the plan produced a positive NPV of S/. 6,728,598 and a 21% IRR, with a 96.87% probability of the NPV staying positive at a 95% confidence level. The thesis concluded the plant was feasible on that basis. It's worth being direct about what this is and isn't: a thesis-level financial and operational case, evaluated and defended academically — not a plant that was ever built or operated.</p>
+
+      <div class="todo-block">
+        <strong>[Write this section] — Learning</strong>
+        What did building this case actually teach you about process design under uncertainty — not the academic result, but the working habit? What would you say you understand now about connecting a process decision (like the tank-utilization schedule) to a financial one, that you didn't fully grasp writing this in 2017?
+      </div>
+
+      <div class="todo-block">
+        <strong>[Write this section] — Next step</strong>
+        Be honest about scope: this isn't a plant with a construction roadmap. What's the honest "next step" — is it revisiting a specific part of the model with better tools, applying the same discipline to a live problem at work, or something else? One or two concrete sentences, not an aspirational statement.
+      </div>
+
+    </article>
+
+    <div class="post-footer reveal">
+      <a class="btn btn-ghost" href="../">← Back to all projects</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© <span id="year"></span> Jorge Palacio Tello</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:REPLACE_WITH_EMAIL@example.com">Email</a>
+      <a href="../../../es/proyectos/caso-de-negocio-planta-acuicultura/">Español</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../assets/js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -31,30 +31,6 @@
     localStorage.setItem("jpt-lang", "es");
   })();
 </script>
-
-<!--
-  Datos estructurados de Persona — solo hechos ya presentes en esta
-  página. Amplía "alumniOf" / "knowsAbout" únicamente cuando el mismo
-  dato también aparezca en el texto visible de arriba.
--->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jorge Palacio Tello",
-  "url": "https://jorgepalaciot.github.io/presentation/es/",
-  "image": "https://jorgepalaciot.github.io/presentation/assets/img/jorge-square.jpg",
-  "jobTitle": "Ingeniero Industrial",
-  "description": "Ingeniero Industrial especializado en Mejora de Procesos y Lean Management, con formación en sistemas de calidad (ISO 9001, HACCP) y fundamentos de BPM.",
-  "address": { "@type": "PostalAddress", "addressLocality": "Lima", "addressCountry": "PE" },
-  "alumniOf": [
-    { "@type": "CollegeOrUniversity", "name": "Universidad Católica de Santa María" },
-    { "@type": "CollegeOrUniversity", "name": "Universidad ESAN" }
-  ],
-  "knowsAbout": ["Mejora de Procesos", "Lean Management", "Mejora Continua", "ISO 9001", "HACCP", "Business Process Management", "Excel Avanzado"],
-  "sameAs": ["https://www.linkedin.com/in/jorgepalaciot/"]
-}
-</script>
 </head>
 <body data-has-hero="true">
 
@@ -69,9 +45,9 @@
     <nav class="primary-nav" aria-label="Principal">
       <div class="nav-links">
         <a href="./" aria-current="page">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#experiencia">Experiencia</a>
         <a href="#certificaciones">Certificaciones</a>
-        <a href="proyectos/">Proyectos</a>
         <a href="blog/">Blog</a>
       </div>
       <div class="controls">
@@ -90,34 +66,23 @@
 
 <main id="main">
 
-  <!--
-    HERO — alineado a la spec aprobada (Contenido_Web_Jorge_Palacio, Sección 1).
-    Nombre y título profesional ahora son elementos explícitos, no viven solo
-    en el brand pequeño del header. Foto sin cambios por pedido explícito —
-    reemplazar ../assets/img/jorge-palacio-tello.jpg cuando esté lista la foto
-    real (fondo neutro, luz de ventana, business casual, hombros hacia arriba,
-    mínimo 1200x1200px).
-
-    Los anchors de los CTA son TEMPORALES: la spec pide "Ver casos reales" ->
-    sección 4 (Casos Reales) y "Contactar" -> sección 9 (Contacto), ninguna
-    construida aún. Apuntando a #experiencia y #contacto (agregado a la
-    sección .cta de cierre) hasta que existan — actualizar ambos href en
-    una sola pasada cuando se construyan.
-  -->
   <section class="hero">
     <div class="container">
       <div class="hero-copy">
-        <p class="eyebrow reveal">Ingeniero Industrial — Lima, Perú</p>
-        <h1 class="reveal">JORGE PALACIO</h1>
-        <p class="hero-role reveal">Consultor de Procesos &amp; Analista de Datos</p>
-        <p class="hero-sub reveal"><em>Convierto procesos complejos en sistemas medibles y eficientes — consultoría independiente desde 2015, con visión reforzada por experiencia internacional en Australia y Nueva Zelanda.</em></p>
-        <div class="hero-badges reveal">
-          <span class="badge-pill">Disponible para: proyectos freelance</span>
-          <span class="badge-pill">Disponible para: roles a tiempo completo (remoto o presencial, Lima)</span>
+        <p class="eyebrow">Ingeniero Industrial — Lima, Perú</p>
+        <h1 class="reveal">Encuentro dónde falla un proceso — <em>y lo corrijo.</em></h1>
+        <p class="hero-sub reveal">Trabajo en mejora de procesos, metodología Lean y sistemas de calidad. Formado en ISO 9001 y HACCP, con base en fundamentos de BPM, construyendo progresivamente hacia gestión de procesos, datos y automatización. Disponible para reubicarme por la oportunidad correcta.</p>
+        <div class="hero-tags reveal">
+          <span class="tag">Mejora de Procesos</span>
+          <span class="tag">Lean Management</span>
+          <span class="tag">Mejora Continua</span>
+          <span class="tag tag-blue">Sistemas de Calidad — ISO 9001</span>
+          <span class="tag tag-green">HACCP</span>
+          <span class="tag tag-amber">Excel Avanzado</span>
         </div>
         <div class="hero-actions reveal">
-          <a class="btn btn-primary" href="proyectos/">Ver casos reales</a>
-          <a class="btn btn-ghost" href="#contacto">Contactar</a>
+          <a class="btn btn-primary" href="mailto:REPLACE_WITH_EMAIL@example.com">Contactar</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/jorgepalaciot/" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
       </div>
       <div class="hero-portrait reveal">
@@ -130,124 +95,115 @@
     </div>
   </section>
 
-  <section id="sobre-mi">
+  <div class="status-strip">
     <div class="container">
-      <p class="section-label reveal">Sobre mí</p>
-      <h2 class="reveal" style="max-width:20ch">Quién soy</h2>
+      <div class="status-item">
+        <span class="label">Estado</span>
+        <span class="value"><span class="status-dot"></span>Disponible — Mejora de Procesos / Lean / Operaciones</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Ubicación</span>
+        <span class="value">Lima, Perú — disponible para reubicación</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Inglés</span>
+        <span class="value">IELTS 6.5 (2025) · Certificación Cambridge</span>
+      </div>
+      <div class="status-item">
+        <span class="label">Formación</span>
+        <span class="value">Ing. Industrial — UCSM, 2017</span>
+      </div>
+    </div>
+  </div>
 
-      <div class="about-grid">
-        <div class="prose reveal">
-          <p>Soy Ingeniero Industrial egresado de la Universidad Católica de Santa María (Arequipa), con más de nueve años de trayectoria independiente en consultoría de procesos, gestión administrativa y mejora continua. Mi trabajo combina dos capacidades que rara vez van juntas en un mismo perfil: la mirada metodológica del BPM y Lean para rediseñar procesos, y el manejo técnico de Excel avanzado y Power BI para convertir esos procesos en datos accionables.</p>
+  <section id="enfoque">
+    <div class="container">
+      <p class="section-label reveal">En qué trabajo</p>
+      <h2 class="reveal" style="max-width:22ch">Una base práctica en mejora de procesos, creciendo hacia datos y automatización</h2>
 
-          <p>Entre 2023 y 2024 viví y trabajé en Australia y Nueva Zelanda, donde observé de cerca cómo operan empresas de mayor escala: gestión por métricas, especialización de puestos y rotación de personal. Esa experiencia internacional, sumada a un nivel de inglés avanzado (IELTS 6.5, British Council), me permite trabajar con la misma soltura en equipos y clientes hispanohablantes o angloparlantes.</p>
-
-          <p>Hoy combino proyectos de consultoría independiente con la búsqueda de un rol donde pueda aportar esa doble capacidad —proceso y datos— de forma permanente.</p>
-
-          <h2>Cómo trabajo — Metodología</h2>
-          <ul>
-            <li><strong>Análisis:</strong> conocer la empresa en detalle, incluyendo estructura, mercado y finanzas.</li>
-            <li><strong>Diagnóstico:</strong> identificar y priorizar problemas mediante análisis y validación de información con stakeholders.</li>
-            <li><strong>Planificación:</strong> proponer soluciones, desarrollar proyectos y planes de contingencia.</li>
-            <li><strong>Implementación:</strong> aplicar cambios, capacitar al personal y hacer ajustes sobre la marcha.</li>
-            <li><strong>Verificación:</strong> evaluar resultados contra KPIs y, si es necesario, reiniciar el ciclo de mejora.</li>
+      <div class="bento">
+        <div class="bento-cell wide reveal">
+          <h3>Mejora de Procesos &amp; Lean Management</h3>
+          <p>Identificar desperdicios, estandarizar flujos de trabajo y aplicar mejora continua a operaciones reales — no solo teoría.</p>
+          <ul class="evidence-list">
+            <li>BPM Day 2020 y BPM Week 2020 (Business Process Management)</li>
+            <li>Gestión operativa aplicada (ver Experiencia)</li>
           </ul>
-          <p><strong>Cada empresa tiene su propio ritmo y desafíos, por eso mi enfoque es personalizado y orientado a resultados concretos.</strong></p>
         </div>
-        <div class="about-portrait reveal">
-          <img src="../assets/img/jorge-palacio-tello.jpg" alt="Jorge Palacio Tello" width="600" height="750">
+        <div class="bento-cell narrow reveal">
+          <h3>Sistemas de Calidad</h3>
+          <p>Formación formal en los dos marcos con los que realmente se mide a un equipo de operaciones.</p>
+          <ul class="evidence-list">
+            <li>ISO 9001 — Interpretación de la norma</li>
+            <li>HACCP — Implementación</li>
+          </ul>
+        </div>
+        <div class="bento-cell narrow reveal">
+          <h3>Gestión de Operaciones</h3>
+          <p>Administración independiente de un edificio multifamiliar: presupuesto, proveedores, cronograma de mantenimiento, gestión de residentes.</p>
+          <ul class="evidence-list">
+            <li>Presupuesto y coordinación de proveedores</li>
+            <li>Planificación de mantenimiento preventivo</li>
+          </ul>
+        </div>
+        <div class="bento-cell wide reveal">
+          <h3>Datos &amp; Herramientas <span class="text-muted" style="font-weight:400;font-size:0.7em">— construyendo hacia Gestión de Procesos / Automatización</span></h3>
+          <p>Excel avanzado es la capa verificada actual. El mapeo de procesos y los fundamentos de BPM son el puente hacia el trabajo de procesos basado en datos.</p>
+          <ul class="evidence-list">
+            <li>Excel Avanzado — certificado</li>
+            <li>SCRUM — simulación / ejercicio aplicado</li>
+          </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="container">
+      <p class="section-label reveal">Trabajo aplicado</p>
+      <h2 class="reveal" style="max-width:22ch">Proyectos — casos reales, no una lista de habilidades</h2>
+      <p class="lead reveal" style="margin-top:0.8rem">Cada página de proyecto recorre el problema, el enfoque y el resultado — incluyendo las partes que se siguen escribiendo. Un proyecto por ahora; se agregan más cuando estén listos, no antes.</p>
+
+      <a class="post-card reveal" href="proyectos/caso-de-negocio-planta-acuicultura/" style="margin-top: var(--sp-4)">
+        <p class="post-meta">
+          <span class="draft-badge">Borrador</span>
+          Tesis de Plan de Negocio · 2017
+        </p>
+        <h3>Planta de Acuicultura de Lenguado — Caso de Negocio</h3>
+        <p>Una tesis de 2017 construida como caso de negocio completo: estudio de mercado, diseño de procesos, dimensionamiento de planta (método Guerchet) y evaluación financiera con Montecarlo para una planta de acuicultura marina de lenguado en la costa centro del Perú.</p>
+      </a>
+
+      <p style="margin-top:1rem"><a class="btn btn-ghost" href="proyectos/">Ver todos los proyectos →</a></p>
     </div>
   </section>
 
   <section id="experiencia">
     <div class="container">
-      <p class="section-label reveal">Experiencia Profesional</p>
-      <h2 class="reveal" style="max-width:22ch">Cada rol, escaneable en menos de 20 segundos</h2>
-      <p class="lead reveal" style="margin-top:0.8rem">Formato cronológico inverso, con las mismas fechas y logros ya verificados en mi CV — sin métricas nuevas no documentadas.</p>
+      <p class="section-label reveal">Trayectoria hasta ahora</p>
+      <h2 class="reveal" style="max-width:24ch">Cada rol que he tenido, etiquetado con honestidad</h2>
+      <p class="lead reveal" style="margin-top:0.8rem">Esta sección solo muestra lo que puedo respaldar. Un detalle completo por cargo con fechas llegará en cuanto confirme títulos y periodos exactos de cada empleador.</p>
 
       <div class="process-line">
         <div class="process-step reveal">
-          <p class="process-meta">02.2025 – 05.2025</p>
-          <h3>Consultor de Procesos <span class="org">— Agromercado – MIDAGRI, Lima</span></h3>
-          <p>Implementé gestión por procesos, sensibilizando y entrevistando al personal.</p>
-          <p>Levanté fichas de caracterización, mapeé procesos e identifiqué cuellos de botella.</p>
-        </div>
-        <div class="process-step reveal">
-          <p class="process-meta">2023 – 2024</p>
-          <h3>Experiencia Internacional <span class="org">— Australia y Nueva Zelanda</span></h3>
-          <p>Analicé dinámicas de empresas de mayor escala: supervisión por métricas, rotación y especialización de puestos.</p>
-          <p>Realicé control de calidad mediante muestreos aleatorios; desarrollé comunicación intercultural y gestión del tiempo.</p>
-        </div>
-        <div class="process-step reveal">
-          <p class="process-meta">01.2022 – 03.2023</p>
-          <h3>Fundador <span class="org">— Isavela Home, Lima</span></h3>
-          <p>Desarrollé la marca y gestioné la operación integral: producción, logística y e-commerce.</p>
-          <p>Reduje los defectos de producción en 90%, mejorando la satisfacción y retención de clientes.</p>
-        </div>
-        <div class="process-step reveal">
-          <p class="process-meta">06.2019 – 03.2021</p>
-          <h3>Asistente de Administración <span class="org">— Edificio Esmeralda, Lima</span></h3>
-          <p>Implementé un programa de mantenimiento preventivo que garantizó 100% de funcionalidad.</p>
-          <p>Supervisé un equipo de 5 personas y fomenté una cultura de mantenimiento proactivo.</p>
+          <p class="process-meta">Actual</p>
+          <h3>Administración de Operaciones Independiente <span class="org">— Edificio multifamiliar, Lima</span></h3>
+          <p>Gestión de presupuesto, proveedores de servicios, mantenimiento preventivo y relación con residentes de un edificio residencial. Rol de operaciones independiente y autodirigido — no un puesto corporativo de procesos, y no lo presento como tal.</p>
         </div>
         <div class="process-step reveal">
           <p class="process-meta">2017</p>
-          <h3>Asesor Externo en Gestión de Procesos <span class="org">— Cadena Xima Hotels, Lima</span></h3>
-          <p>Elaboré manuales de procedimientos y mejoré procesos para múltiples propiedades de la cadena.</p>
-          <p>Mapeé procesos y levanté fichas de caracterización por propiedad, identificando puntos de fricción operativa comunes entre sedes.</p>
+          <h3>Ingeniería Industrial <span class="org">— Universidad Católica de Santa María</span></h3>
+          <p>Tesis: plan de negocio para una planta de acuicultura marina de lenguado en la costa centro del Perú — estudio de mercado, diseño de planta, evaluación de impacto ambiental y evaluación financiera (VAN/TIR con análisis de sensibilidad Montecarlo). <a href="proyectos/caso-de-negocio-planta-acuicultura/">Ver el caso de estudio completo →</a></p>
         </div>
         <div class="process-step reveal">
-          <p class="process-meta">2015 – 2022</p>
-          <h3>Consultor de Procesos y Apoyo Administrativo <span class="org">— Lima</span></h3>
-          <p>Ejecuté proyectos de inventariado, elaboración de manuales MOF, mapeo y caracterización de procesos.</p>
-          <p>Participé en diseño de planta, análisis de información y consultorías puntuales.</p>
+          <p class="process-meta">Posgrado</p>
+          <h3>Diploma <span class="org">— ESAN</span></h3>
+          <p>Diploma de posgrado, Universidad ESAN.</p>
         </div>
       </div>
-
-      <!-- El botón de descarga es un placeholder hasta actualizar el PDF con la fila de Xima Hotels separada. -->
-      <p style="margin-top:var(--sp-4)"><a class="btn btn-ghost" href="../assets/cv/jorge-palacio-tello-cv.pdf">Descargar CV (PDF) →</a></p>
 
       <div class="blog-locked reveal" style="margin-top:var(--sp-5)">
-        <strong>Nota:</strong> los roles previos en Teleperformance, La Hostería y Caja Sullana están documentados pero aún no publicados aquí con título y fechas exactas. Se agregarán en cuanto los confirme — prefiero dejar esto incompleto antes que publicar algo que no pueda sostener en una entrevista.
+        <strong>Nota:</strong> los roles previos en Teleperformance, La Hostería, Caja Sullana y XIMA están documentados pero aún no publicados aquí con título y fechas exactas. Se agregarán en cuanto los confirme — prefiero dejar esto incompleto antes que publicar algo que no pueda sostener en una entrevista.
       </div>
-    </div>
-  </section>
-
-  <section id="casos-reales">
-    <div class="container">
-      <p class="section-label reveal">Casos Reales</p>
-      <h2 class="reveal" style="max-width:22ch">Cuatro proyectos verificados, de principio a fin</h2>
-      <p class="lead reveal" style="margin-top:0.8rem">Solo casos que puedo documentar — sin cifras estimadas, sin casos inventados.</p>
-
-      <div class="project-list" style="margin-top:var(--sp-4)">
-        <div class="project-item reveal">
-          <div class="project-thumb">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M8 11h2M8 15h2M14 7h2M14 11h2M14 15h2M10 21v-4h4v4"/></svg>
-          </div>
-          <div class="project-content">
-            <p class="project-eyebrow">Consultoría de Procesos Hoteleros</p>
-            <h3>Cadena Xima Hotels</h3>
-            <p>Múltiples propiedades de la cadena Xima Hotels requerían estandarizar procesos operativos entre sedes. Mapeé procesos y levanté fichas de caracterización por propiedad, identificando puntos de fricción operativa comunes a la cadena.</p>
-            <p class="project-tags">BPM · SIPOC · Mapeo de Procesos</p>
-            <p class="project-meta">2017 · Lima, Perú</p>
-          </div>
-        </div>
-        <div class="project-item reveal">
-          <div class="project-thumb">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
-          </div>
-          <div class="project-content">
-            <p class="project-eyebrow">Mejora de Procesos, Manufactura</p>
-            <h3>Isavela Home</h3>
-            <p>Emprendimiento propio de manufactura, con una tasa de defectos que afectaba la satisfacción del cliente. Rediseñé producción y control de calidad, gestioné logística y e-commerce de punta a punta — reduje los defectos en 90%.</p>
-            <p class="project-tags">Control de Calidad · Producción · E-commerce</p>
-            <p class="project-meta">01.2022 – 03.2023 · Lima, Perú</p>
-          </div>
-        </div>
-      </div>
-
-      <p style="margin-top:var(--sp-4)"><a class="btn btn-ghost" href="proyectos/">Ver los 4 proyectos →</a></p>
     </div>
   </section>
 
@@ -293,7 +249,7 @@
     </div>
   </section>
 
-  <section class="cta" id="contacto">
+  <section class="cta">
     <div class="container">
       <p class="section-label reveal" style="justify-content:center">Contacto</p>
       <h2 class="reveal">Disponible para roles de mejora de procesos, Lean y operaciones — en cualquier país.</h2>
