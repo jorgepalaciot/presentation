@@ -21,7 +21,13 @@ if the domain changes (see "Migrating to a custom domain" below).
 /                     root redirector: detects browser language, sends to /es/ or /en/
 /en/                  English site (canonical source of English copy)
 /es/                  Spanish site (canonical source of Spanish copy — not a translation layer)
-/en/blog/, /es/blog/  blog index (post pages will live at /en/blog/<slug>/ etc.)
+/en/blog/, /es/blog/  blog index (post pages live at /en/blog/<slug>/ etc.)
+/en/projects/, /es/proyectos/  project case studies (Problem/Context/Approach/
+                      Process/Result/Learning/Next step) — separate from the
+                      blog, which is where the more personal reflection lives.
+                      Same draft convention as blog posts: <meta name="robots"
+                      content="noindex"> and a "Draft" badge stay on until every
+                      section (including Learning / Next step) is finished.
 /assets/css/tokens.css   design tokens: color (light/dark), type scale, spacing
 /assets/css/style.css    components and layout
 /assets/js/main.js       theme persistence + scroll-reveal animation
@@ -41,6 +47,8 @@ Search the codebase for these and fix before publishing:
 |---|---|---|
 | `REPLACE_WITH_EMAIL@example.com` | every page, in `mailto:` links and footer | replace with a real email you check |
 | Teleperformance / La Hostería / Caja Sullana / XIMA | `/en/index.html` and `/es/index.html`, Experience section | currently **not listed with titles/dates** on purpose — I don't have confirmed job titles or employment dates from your uploaded certificates. Give me exact title + start/end month-year for each and I'll add them to the timeline properly instead of leaving the placeholder note. |
+| Aquaculture project — Learning / Next step | `/en/projects/aquaculture-plant-business-case/`, `/es/proyectos/caso-de-negocio-planta-acuicultura/` | two `[Write this section]` blocks need your own judgment — see the todo-block prompts inside each file |
+| Aquaculture blog article — reflection sections | `/en/blog/lean-read-aquaculture-thesis/`, `/es/blog/lectura-lean-tesis-acuicultura/` | same as above, two `[Write this section]` blocks pending |
 | CV download button | not yet added | once you have a PDF CV, tell me and I'll add a "Download CV" button linking to `assets/cv/jorge-palacio-tello-cv.pdf` |
 | GitHub profile link | not yet added to footer | tell me your GitHub username and I'll add it |
 
@@ -97,10 +105,11 @@ pushes.
 ## What's built vs. what's next
 
 **Built:** home page (EN/ES), design system, dark/light + language toggles,
-blog architecture (no fake posts — empty on purpose until 3 drafts are ready).
+blog architecture (one draft article, more planned), projects architecture
+(one draft case study — the aquaculture thesis — more added only once they
+have real, verifiable content).
 
 **Not built yet:** dedicated `/experience/` page with full role-by-role
-detail, `/projects/` (the aquaculture thesis as a proper case study),
-`/contact/` as a standalone page (currently just `mailto:` links), individual
-blog post template. These come next, once the placeholders above are filled —
-building them with fake dates/emails now would just mean redoing them.
+detail, `/contact/` as a standalone page (currently just `mailto:` links).
+These come next, once the placeholders above are filled — building them
+with fake dates/emails now would just mean redoing them.

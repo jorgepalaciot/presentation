@@ -20,14 +20,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jorgepalaciot.github.io/presentation/en/projects/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://jorgepalaciot.github.io/presentation/es/proyectos/"/>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jorgepalaciot.github.io/presentation/es/proyectos/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://jorgepalaciot.github.io/presentation/en/projects/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://jorgepalaciot.github.io/presentation/es/proyectos/"/>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jorgepalaciot.github.io/presentation/en/blog/</loc>
@@ -44,3 +44,11 @@
     <priority>0.7</priority>
   </url>
 </urlset>
+<!--
+  NOTE: the aquaculture-plant-business-case project page and the
+  lean-read-aquaculture-thesis / lectura-lean-tesis-acuicultura blog
+  articles are intentionally NOT listed here yet — they carry
+  <meta name="robots" content="noindex"> because their reflection
+  sections are still unfinished. Add them to this sitemap (and drop the
+  noindex tag) once those sections are done.
+-->
