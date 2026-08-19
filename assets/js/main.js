@@ -186,3 +186,24 @@
     }
   });
 })();
+
+// ---- WhatsApp floating button (site-wide, language-aware) ----
+(function () {
+  "use strict";
+  document.addEventListener("DOMContentLoaded", function () {
+    var lang = document.documentElement.lang === "es" ? "es" : "en";
+    var msg = lang === "es"
+      ? "Hola Jorge, vi tu web y me gustaría conversar contigo."
+      : "Hi Jorge, I saw your website and would like to get in touch.";
+
+    var a = document.createElement("a");
+    a.href = "https://wa.me/51912000480?text=" + encodeURIComponent(msg);
+    a.className = "whatsapp-float";
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.setAttribute("aria-label", lang === "es" ? "Escríbeme por WhatsApp" : "Message me on WhatsApp");
+    a.innerHTML = '<svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.697 4.607 1.902 6.481L4 29l7.72-1.86A11.93 11.93 0 0 0 16.001 27C22.629 27 28 21.627 28 15S22.629 3 16.001 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.213-4.582 1.104 1.127-4.462-.233-.366A9.77 9.77 0 0 1 6.182 15c0-5.42 4.4-9.818 9.82-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.819 9.818zm5.386-7.35c-.295-.148-1.746-.862-2.017-.96-.271-.099-.469-.148-.666.148-.198.296-.766.96-.94 1.157-.173.198-.346.222-.641.074-.295-.148-1.246-.459-2.373-1.463-.877-.782-1.469-1.748-1.641-2.043-.173-.296-.019-.456.13-.603.133-.132.296-.346.444-.518.148-.173.198-.296.296-.494.099-.198.05-.37-.025-.518-.074-.148-.666-1.605-.913-2.198-.24-.578-.485-.5-.666-.51l-.567-.01c-.198 0-.518.074-.79.37-.271.297-1.037 1.014-1.037 2.472s1.062 2.867 1.21 3.065c.148.198 2.088 3.19 5.06 4.472.707.305 1.259.487 1.689.623.71.226 1.356.194 1.867.118.57-.085 1.746-.714 1.993-1.403.247-.69.247-1.28.173-1.403-.074-.123-.271-.198-.567-.346z"/></svg>';
+
+    document.body.appendChild(a);
+  });
+})();
