@@ -469,6 +469,18 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .academic-item:last-child { margin-bottom: 0; }
 .academic-item .item-title { font-weight: 600; margin: 0; }
 
+.cert-group { margin-bottom: var(--sp-3); }
+.cert-group:last-child { margin-bottom: 0; }
+
+.cert-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
 .item-meta {
   font-family: var(--font-mono);
   font-size: 0.72rem;
