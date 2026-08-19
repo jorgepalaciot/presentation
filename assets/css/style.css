@@ -454,22 +454,47 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   .project-thumb { max-width: 160px; }
 }
 
-/* ---------------- Certifications ---------------- */
+/* ---------------- Academic profile ---------------- */
 
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  margin-top: var(--sp-4);
+.academic-grid { display: grid; gap: var(--sp-5); margin-top: var(--sp-4); }
+
+.academic-block h3 {
+  font-family: var(--font-body);
+  font-size: var(--step-1);
+  font-weight: 700;
+  margin-bottom: var(--sp-2);
 }
 
-.cert-card { background: var(--bg-raised); padding: var(--sp-3); }
-.cert-card .cert-org { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
-.cert-card h4 { font-size: 0.95rem; margin: 0; font-weight: 700; }
+.academic-item { margin-bottom: 0.9rem; }
+.academic-item:last-child { margin-bottom: 0; }
+.academic-item .item-title { font-weight: 600; margin: 0; }
+
+.item-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0.25rem 0 0;
+}
+
+.thesis-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-start;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3) var(--sp-4);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.thesis-card:hover { border-color: var(--accent); background: var(--accent-soft); }
+.thesis-card .item-title { font-family: var(--font-display); font-size: var(--step-0); font-weight: 600; }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.3rem; }
 
 /* ---------------- Blog teaser / list ---------------- */
 
