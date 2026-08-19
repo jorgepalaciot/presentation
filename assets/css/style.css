@@ -529,6 +529,13 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
+[data-theme="light"] .cert-group,
+:root:not([data-theme="dark"]) .cert-group {
+  background: var(--bg-raised);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-1);
+}
+
 /* ---------------- Certifications (legacy flat grid — unused since the
    Academic Profile redesign; kept in case it's reused elsewhere) ---------------- */
 
