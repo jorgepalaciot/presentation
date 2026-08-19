@@ -469,18 +469,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .academic-item:last-child { margin-bottom: 0; }
 .academic-item .item-title { font-weight: 600; margin: 0; }
 
-.cert-group { margin-bottom: var(--sp-3); }
-.cert-group:last-child { margin-bottom: 0; }
-
-.cert-group-label {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
 .item-meta {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -507,6 +495,57 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .thesis-card .item-title { font-family: var(--font-display); font-size: var(--step-0); font-weight: 600; }
 
 .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.3rem; }
+
+/* Certifications & Diplomas — grouped into card-like columns instead of
+   a flat stacked list, so "Core Specialization" reads as the anchor
+   credential rather than competing visually with supporting courses. */
+.cert-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-3);
+  margin-top: var(--sp-3);
+}
+
+.cert-group {
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+}
+
+.cert-group.core {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft-border);
+}
+
+.cert-group.core .cert-group-label { color: var(--accent-strong); }
+
+.cert-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------------- Certifications (legacy flat grid — unused since the
+   Academic Profile redesign; kept in case it's reused elsewhere) ---------------- */
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: var(--sp-4);
+}
+
+.cert-card { background: var(--bg-raised); padding: var(--sp-3); }
+.cert-card .cert-org { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+.cert-card h4 { font-size: 0.95rem; margin: 0; font-weight: 700; }
 
 /* ---------------- Blog teaser / list ---------------- */
 
