@@ -64,21 +64,6 @@ section { padding-block: var(--sp-6); }
   display: inline-block;
 }
 
-/* ---------------- Reading progress ---------------- */
-
-.reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background: var(--accent);
-  z-index: 60;
-  transition: width 100ms linear;
-}
-
-@media (prefers-reduced-motion: reduce) { .reading-progress { transition: none; } }
-
 /* ---------------- Header ---------------- */
 
 .site-header {
@@ -117,27 +102,6 @@ body[data-has-hero="true"] .site-header:not(.is-scrolled) {
   --hdr-btn-bg: transparent;
 }
 
-/* On pages with a full-bleed hero, the header must float over the hero
-   rather than push it down. Sticky still reserves its own height in the
-   document flow (a placeholder box stays even once the header itself is
-   pinned), so the hero was starting `header-height` px below the real
-   top of the viewport instead of y=0. Fixed removes the header from
-   flow entirely, so the hero (already 100svh) genuinely starts at y=0
-   with the header floating transparently on top, matching the
-   transparent/light-text state defined above.
-
-   Scoped to [data-has-hero="true"] only: the blog index and post pages
-   have no full-bleed hero, so their header stays `sticky` (inherited
-   from .site-header above) and continues to reserve its own space
-   correctly — no extra padding-top needed on those templates. */
-body[data-has-hero="true"] .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-}
-
 .site-header .container { display: flex; align-items: center; justify-content: space-between; padding-block: var(--sp-2); }
 
 .brand {
@@ -164,76 +128,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 @media (max-width: 720px) { .nav-links { display: none; } }
 
 .controls { display: flex; align-items: center; gap: 0.4rem; }
-
-/* Language switch lives in the header on desktop; on narrow screens it
-   moves into the mobile-nav panel instead (see below) so the header
-   bar only has to fit the logo, the theme toggle and the hamburger. */
-@media (max-width: 720px) {
-  .controls > .lang-switch { display: none; }
-}
-
-/* ---------------- Mobile nav (hamburger) ---------------- */
-
-/* Compound selector required: .icon-btn alone sets display:inline-flex
-   unconditionally and is declared later in this file than a plain
-   .nav-toggle rule, so same-specificity cascade order made .icon-btn
-   win and kept the button visible above 720px regardless of the media
-   query below. Two classes on the selector raises specificity above
-   .icon-btn's single-class rule, so this wins unconditionally,
-   independent of where either rule sits in the file. */
-.icon-btn.nav-toggle { display: none; position: relative; }
-
-@media (max-width: 720px) {
-  .icon-btn.nav-toggle { display: inline-flex; }
-}
-
-.nav-toggle .icon-close { display: none; }
-.nav-toggle[aria-expanded="true"] .icon-burger { display: none; }
-.nav-toggle[aria-expanded="true"] .icon-close { display: inline-flex; }
-
-.mobile-nav {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-raised);
-  border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow-2);
-  padding: var(--sp-2) var(--sp-4) var(--sp-3);
-}
-
-.mobile-nav[hidden] { display: none; }
-
-.mobile-nav a {
-  padding: 0.85em 0.1em;
-  text-decoration: none;
-  color: var(--text);
-  font-size: var(--step-0);
-  border-bottom: 1px solid var(--border);
-}
-
-.mobile-nav a[aria-current="page"] { color: var(--accent-strong); font-weight: 600; }
-
-.mobile-nav-lang {
-  display: flex;
-  gap: 0.6rem;
-  margin-top: var(--sp-2);
-  padding-top: var(--sp-2);
-}
-
-.mobile-nav-lang a {
-  flex: 1;
-  text-align: center;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  padding: 0.6em;
-}
-
-.mobile-nav-lang a[aria-current="true"] { background: var(--accent-soft); color: var(--accent-strong); font-weight: 700; }
 
 .icon-btn {
   border: 1px solid var(--hdr-border);
@@ -287,9 +181,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .hero h1 em { font-style: italic; color: var(--hero-accent); }
 .hero-sub { font-size: var(--step-1); color: var(--hero-text-muted); max-width: 38ch; margin-top: var(--sp-3); }
 
-.hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--sp-4); }
-/* ---- Add to assets/css/style.css, right after the .hero-tags / .tag block ---- */
-
+/* Role title, shown between the name (h1) and the tagline (.hero-sub) */
 .hero-role {
   font-family: var(--font-body);
   font-size: var(--step-1);
@@ -298,19 +190,8 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   margin-top: 0.4rem;
 }
 
-.hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: var(--sp-3); }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--sp-4); }
 
-.badge-pill {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.02em;
-  padding: 0.45em 0.9em;
-  border-radius: 999px;
-  border: 1px solid rgba(245, 242, 234, 0.35);
-  color: var(--hero-text);
-  background: rgba(245, 242, 234, 0.08);
-  white-space: normal;
-}
 .tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -324,6 +205,21 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 
 .tag.tag-green { background: var(--tag-green-bg); color: var(--tag-green-text); }
 .tag.tag-amber { background: var(--tag-amber-bg); color: var(--tag-amber-text); }
+
+/* Availability badges (freelance / full-time), shown below the tagline */
+.hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: var(--sp-3); }
+
+.badge-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  padding: 0.45em 0.9em;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 242, 234, 0.35);
+  color: var(--hero-text);
+  background: rgba(245, 242, 234, 0.08);
+  white-space: normal;
+}
 
 .hero-actions { display: flex; gap: 0.8rem; margin-top: var(--sp-4); flex-wrap: wrap; }
 
@@ -397,22 +293,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   .scroll-hint { display: none; }
 }
 
-/* ---------------- Status strip ---------------- */
-
-.status-strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-sunken); }
-.status-strip .container { display: flex; flex-wrap: wrap; gap: var(--sp-4); padding-block: var(--sp-3); }
-.status-item { display: flex; flex-direction: column; gap: 0.15rem; }
-.status-item .label { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
-.status-item .value { font-size: var(--step--1); color: var(--text); }
-
-.status-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: #7fa876;
-  display: inline-block;
-  margin-right: 0.4em;
-  box-shadow: 0 0 0 3px var(--tag-green-bg);
-}
-
 /* ---------------- Reveal on scroll ---------------- */
 
 .reveal {
@@ -427,34 +307,32 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   .reveal { transition: opacity 300ms ease; transform: none; opacity: 1; }
 }
 
-/* ---------------- Bento skill grid ---------------- */
+/* ---------------- About section (bio + portrait, two columns) ---------------- */
 
-.bento {
+.about-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  grid-template-columns: 1.5fr 0.5fr;
+  gap: var(--sp-5);
+  align-items: start;
   margin-top: var(--sp-4);
 }
 
-.bento-cell { background: var(--bg-raised); padding: var(--sp-4); grid-column: span 3; }
-.bento-cell.wide { grid-column: span 4; }
-.bento-cell.narrow { grid-column: span 2; }
-
-@media (max-width: 720px) {
-  .bento { grid-template-columns: 1fr; }
-  .bento-cell, .bento-cell.wide, .bento-cell.narrow { grid-column: span 1; }
+.about-portrait {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-2);
+  aspect-ratio: 4 / 5;
+  position: sticky;
+  top: calc(var(--sp-4) + 70px);
 }
 
-.bento-cell h3 { font-size: var(--step-1); font-family: var(--font-body); font-weight: 700; margin-bottom: 0.5rem; }
-.bento-cell p { color: var(--text-muted); font-size: var(--step--1); }
+.about-portrait img { width: 100%; height: 100%; object-fit: cover; }
 
-.evidence-list { list-style: none; margin: 0.8rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
-.evidence-list li { font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 0.5em; align-items: baseline; }
-.evidence-list li::before { content: "—"; color: var(--text-faint); }
+@media (max-width: 860px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-portrait { order: -1; max-width: 220px; margin-inline: auto; position: static; }
+}
 
 /* ---------------- Process line (timeline signature) ---------------- */
 
@@ -477,6 +355,92 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .process-step h3 { font-size: var(--step-1); font-family: var(--font-body); font-weight: 700; }
 .process-step .org { color: var(--accent); font-weight: 600; }
 .process-step p { color: var(--text-muted); margin-top: 0.5rem; max-width: 60ch; }
+
+/* ---------------- Projects list (numbered, clickable — home teaser + full /proyectos/ list) ---------------- */
+
+.project-list { margin-top: var(--sp-4); }
+
+.project-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--sp-4);
+  padding-block: var(--sp-5);
+  border-top: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 150ms ease;
+}
+
+.project-item:last-child { padding-bottom: 0; }
+.project-item:hover { border-color: var(--border-strong); }
+.project-item:hover h3 { color: var(--accent-strong); }
+
+.project-thumb {
+  background: var(--bg-sunken);
+  border-radius: var(--radius-md);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-faint);
+}
+
+.project-thumb svg { width: 38%; height: 38%; }
+
+.project-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.project-content h3 {
+  font-size: var(--step-1);
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  transition: color 150ms ease;
+}
+
+.project-content > p:not(.project-eyebrow):not(.project-tags):not(.project-meta) {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 62ch;
+  margin-bottom: 0.8rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.5rem;
+}
+
+.project-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Same tag styling, reused standalone (not inside a card) on individual
+   project article pages — bigger, muted rather than faint. */
+.prose .project-tags {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .project-item { grid-template-columns: 1fr; }
+  .project-thumb { max-width: 160px; }
+}
 
 /* ---------------- Certifications ---------------- */
 
@@ -524,91 +488,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .post-card:hover h3 { color: var(--accent-strong); }
 .post-card p { color: var(--text-muted); margin-top: 0.4rem; }
 
-/* ---------------- Article page: two-column grid (article + rail) ----------------
-   Fixes the layout bug where .prose (capped at --max-text) sat flush-left
-   inside the full-width .container, leaving a large dead zone on wide
-   screens. The grid below centers the reading column + a sticky rail as
-   one unit, and gives the freed-up width an actual job: on-page nav,
-   reading progress and post metadata instead of empty space. */
-
-.post-grid {
-  display: grid;
-  grid-template-columns: minmax(0, var(--max-text)) 240px;
-  gap: var(--sp-5);
-  align-items: start;
-  justify-content: center;
-}
-
-.post-main { min-width: 0; }
-
-.post-rail {
-  position: sticky;
-  top: calc(var(--sp-3) + 64px);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
-}
-
-@media (max-width: 900px) {
-  .post-grid { grid-template-columns: minmax(0, 1fr); }
-  .post-rail { position: static; }
-}
-
-/* "Corner tick" card — the site's blueprint/technical motif, reused here
-   so the rail reads as an instrument panel rather than a decorative box. */
-.tick-card {
-  position: relative;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--bg-raised);
-  padding: var(--sp-3);
-}
-
-.tick-card::before,
-.tick-card::after {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border: 1.5px solid var(--accent);
-  pointer-events: none;
-}
-
-.tick-card::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
-.tick-card::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
-
-.rail-label {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--accent);
-  margin: 0 0 0.7rem;
-}
-
-.toc { display: flex; flex-direction: column; gap: 0.55rem; }
-.toc a {
-  font-size: 0.82rem;
-  line-height: 1.35;
-  color: var(--text-muted);
-  text-decoration: none;
-  padding-left: 0.75rem;
-  border-left: 2px solid var(--border);
-  transition: color 150ms ease, border-color 150ms ease;
-}
-.toc a:hover { color: var(--text); }
-.toc a.active { color: var(--text); border-left-color: var(--accent); font-weight: 600; }
-
-.rail-meta-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
-.rail-meta-list li { display: flex; justify-content: space-between; gap: 0.8rem; font-size: 0.8rem; }
-.rail-meta-list .k { color: var(--text-muted); }
-.rail-meta-list .v { color: var(--text); font-weight: 600; text-align: right; }
-
-.rail-actions { display: flex; flex-direction: column; gap: 0.5rem; margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid var(--border); }
-.rail-actions a { font-size: 0.8rem; text-decoration: none; color: var(--accent-strong); display: flex; align-items: center; gap: 0.4em; }
-.rail-actions a:hover { text-decoration: underline; }
-
-/* ---------------- Article page ---------------- */
+/* ---------------- Article page (blog posts + individual project pages) ---------------- */
 
 .breadcrumb {
   font-family: var(--font-mono);
@@ -666,7 +546,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   letter-spacing: -0.01em;
   margin-top: var(--sp-5);
   margin-bottom: var(--sp-2);
-  scroll-margin-top: calc(var(--sp-3) + 76px);
 }
 
 .prose h2:first-child { margin-top: 0; }
@@ -690,105 +569,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 }
 
 .prose strong { font-weight: 700; }
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 0.5fr;
-  gap: var(--sp-5);
-  align-items: start;
-  margin-top: var(--sp-4);
-}
-
-.about-portrait {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-2);
-  aspect-ratio: 4 / 5;
-  position: sticky;
-  top: calc(var(--sp-4) + 70px);
-}
-
-.about-portrait img { width: 100%; height: 100%; object-fit: cover; }
-
-@media (max-width: 860px) {
-  .about-grid { grid-template-columns: 1fr; }
-  .about-portrait { order: -1; max-width: 220px; margin-inline: auto; position: static; }
-}
-
-/* ---- Replace the old .case-grid / .case-card block in assets/css/style.css with this ---- */
-
-.project-list { margin-top: var(--sp-4); }
-
-.project-item {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: var(--sp-4);
-  padding-block: var(--sp-5);
-  border-top: 1px solid var(--border);
-}
-
-.project-item:last-child { padding-bottom: 0; }
-
-.project-thumb {
-  background: var(--bg-sunken);
-  border-radius: var(--radius-md);
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-faint);
-}
-
-.project-thumb svg { width: 38%; height: 38%; }
-
-.project-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
-.project-content h3 {
-  font-size: var(--step-1);
-  font-family: var(--font-display);
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.project-content > p:not(.project-eyebrow):not(.project-tags):not(.project-meta) {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  max-width: 62ch;
-  margin-bottom: 0.8rem;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: 0.5rem;
-}
-
-.project-meta {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-muted);
-}
-
-@media (max-width: 640px) {
-  .project-item { grid-template-columns: 1fr; }
-  .project-thumb { max-width: 160px; }
-}
-
-
 
 .todo-block {
   border: 1px dashed var(--tag-amber-text);
