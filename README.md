@@ -39,15 +39,11 @@ Search the codebase for these and fix before publishing:
 
 | Placeholder | Where | What to do |
 |---|---|---|
-| `REPLACE_WITH_EMAIL@example.com` | every page, in `mailto:` links and footer | replace with a real email you check |
 | Teleperformance / La Hostería / Caja Sullana / XIMA | `/en/index.html` and `/es/index.html`, Experience section | currently **not listed with titles/dates** on purpose — I don't have confirmed job titles or employment dates from your uploaded certificates. Give me exact title + start/end month-year for each and I'll add them to the timeline properly instead of leaving the placeholder note. |
 | CV download button | not yet added | once you have a PDF CV, tell me and I'll add a "Download CV" button linking to `assets/cv/jorge-palacio-tello-cv.pdf` |
 | GitHub profile link | not yet added to footer | tell me your GitHub username and I'll add it |
 
-Run this to find the email placeholder:
-```
-grep -rn "REPLACE_WITH_EMAIL" .
-```
+
 
 ## ⚠️ `robots.txt` is currently inert — read this
 
