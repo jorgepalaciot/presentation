@@ -486,7 +486,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   border-radius: var(--radius-md);
   background: var(--bg-raised);
   box-shadow: var(--shadow-1);
-  padding: var(--sp-4);
+  padding: var(--sp-3); /* antes var(--sp-4) */
 }
 
 .stat-card-label {
@@ -498,7 +498,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   margin-bottom: var(--sp-3);
 }
 
-.stat-item { margin-bottom: var(--sp-4); }
+.stat-item { margin-bottom: var(--sp-3); } /* antes var(--sp-4) */
 .stat-item:last-of-type { margin-bottom: 0; }
 
 .stat-number {
@@ -521,7 +521,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .stat-divider {
   height: 1px;
   background: var(--border);
-  margin: var(--sp-4) 0;
+  margin: var(--sp-3) 0; /* antes var(--sp-4) 0 */
 }
 
 @media (max-width: 960px) {
