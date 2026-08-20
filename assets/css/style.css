@@ -371,34 +371,124 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
    as metadata, not as a claim. ---- */
 .duration-chip {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 600;
   letter-spacing: 0.03em;
-  color: var(--text-muted);
-  background: var(--bg-sunken);
-  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bg-raised);
+  border: 1px solid var(--border-strong);
   border-radius: 999px;
-  padding: 0.2em 0.65em;
+  padding: 0.28em 0.75em;
   white-space: nowrap;
+  box-shadow: var(--shadow-1);
 }
 
-/* ---- NEW: role-type badge — distinguishes independent consulting from
+/* ---- role-type badge — distinguishes independent consulting from
    founder/employee/international roles at a glance. Reuses the existing
-   tag color tokens so it stays inside the established palette instead
-   of introducing new colors. ---- */
+   tag color tokens (stays inside the established palette) but adds a
+   border tinted from the same token via color-mix, plus heavier weight,
+   so it reads with real contrast instead of blending into the page. ---- */
 .role-badge {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: 999px;
-  padding: 0.2em 0.65em;
+  padding: 0.28em 0.75em;
   white-space: nowrap;
 }
 
-.role-badge-freelance { background: var(--tag-blue-bg); color: var(--tag-blue-text); }
-.role-badge-founder { background: var(--tag-green-bg); color: var(--tag-green-text); }
-.role-badge-employee { background: var(--tag-amber-bg); color: var(--tag-amber-text); }
-.role-badge-international { background: var(--accent-soft); color: var(--accent-strong); border: 1px solid var(--accent-soft-border); }
+.role-badge-freelance {
+  background: var(--tag-blue-bg);
+  color: var(--tag-blue-text);
+  border: 1px solid color-mix(in srgb, var(--tag-blue-text) 40%, transparent);
+}
+.role-badge-founder {
+  background: var(--tag-green-bg);
+  color: var(--tag-green-text);
+  border: 1px solid color-mix(in srgb, var(--tag-green-text) 40%, transparent);
+}
+.role-badge-employee {
+  background: var(--tag-amber-bg);
+  color: var(--tag-amber-text);
+  border: 1px solid color-mix(in srgb, var(--tag-amber-text) 40%, transparent);
+}
+.role-badge-international {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  border: 1px solid color-mix(in srgb, var(--accent-strong) 40%, transparent);
+}
+
+/* ---- NEW: Experience section two-column layout. On wide viewports the
+   process-line alone leaves the right ~55% of the container empty
+   (paragraphs are capped at 60ch for readability). Instead of letting
+   that space go to waste, a sticky "at a glance" card sits there —
+   every number in it is either already stated on the page (9+ years,
+   in About Me) or a literal count of what's on screen (role count,
+   sector count), never a new claim. ---- */
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--sp-5);
+  align-items: start;
+  margin-top: var(--sp-4);
+}
+
+.experience-main { min-width: 0; }
+
+.experience-aside {
+  position: sticky;
+  top: calc(var(--sp-4) + 90px);
+}
+
+.stat-card {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--bg-raised);
+  box-shadow: var(--shadow-1);
+  padding: var(--sp-4);
+}
+
+.stat-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--sp-3);
+}
+
+.stat-item { margin-bottom: var(--sp-4); }
+.stat-item:last-of-type { margin-bottom: 0; }
+
+.stat-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+}
+
+.stat-desc {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  max-width: 26ch;
+}
+
+.stat-divider {
+  height: 1px;
+  background: var(--border);
+  margin: var(--sp-4) 0;
+}
+
+@media (max-width: 960px) {
+  .experience-grid { grid-template-columns: 1fr; }
+  .experience-aside { position: static; margin-top: var(--sp-4); }
+}
 
 /* ---- NEW: per-role skill tags — same visual language as .project-tags
    in the Real Cases / Projects sections, so a reclutador who has already
