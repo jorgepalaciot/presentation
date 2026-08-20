@@ -464,9 +464,15 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
    that space go to waste, a sticky "at a glance" card sits there —
    every number in it is either already stated on the page (9+ years,
    in About Me) or a literal count of what's on screen (role count,
-   sector count), never a new claim. ---- */
+   sector count), never a new claim.
+
+   Card spacing (padding / stat-item gaps / divider margins) is kept
+   compact on purpose — see .stat-card / .stat-item / .stat-divider
+   below — so the whole card fits within one viewport height while
+   staying sticky at its original width and position. ---- */
 .experience-grid {
-  grid-template-columns: 1fr 360px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
   gap: var(--sp-5);
   align-items: start;
   margin-top: var(--sp-4);
@@ -484,7 +490,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   border-radius: var(--radius-md);
   background: var(--bg-raised);
   box-shadow: var(--shadow-1);
-  padding: var(--sp-3); /* antes var(--sp-4) */
+  padding: var(--sp-3);
 }
 
 .stat-card-label {
@@ -496,7 +502,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   margin-bottom: var(--sp-3);
 }
 
-.stat-item { margin-bottom: var(--sp-3); } /* antes var(--sp-4) */
+.stat-item { margin-bottom: var(--sp-3); }
 .stat-item:last-of-type { margin-bottom: 0; }
 
 .stat-number {
@@ -513,13 +519,13 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   font-size: 0.82rem;
   color: var(--text-muted);
   margin-top: 0.35rem;
-  max-width: 30ch; /* antes 26ch */
+  max-width: 26ch;
 }
 
 .stat-divider {
   height: 1px;
   background: var(--border);
-  margin: var(--sp-3) 0; /* antes var(--sp-4) 0 */
+  margin: var(--sp-3) 0;
 }
 
 @media (max-width: 960px) {
