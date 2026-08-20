@@ -32,11 +32,6 @@
   })();
 </script>
 
-<!--
-  Datos estructurados de Persona — solo hechos ya presentes en esta
-  página. Amplía "alumniOf" / "knowsAbout" únicamente cuando el mismo
-  dato también aparezca en el texto visible de arriba.
--->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,20 +86,6 @@
 
 <main id="main">
 
-  <!--
-    HERO — alineado a la spec aprobada (Contenido_Web_Jorge_Palacio, Sección 1).
-    Nombre y título profesional ahora son elementos explícitos, no viven solo
-    en el brand pequeño del header. Foto sin cambios por pedido explícito —
-    reemplazar ../assets/img/jorge-palacio-tello.jpg cuando esté lista la foto
-    real (fondo neutro, luz de ventana, business casual, hombros hacia arriba,
-    mínimo 1200x1200px).
-
-    Los anchors de los CTA son TEMPORALES: la spec pide "Ver casos reales" ->
-    sección 4 (Casos Reales) y "Contactar" -> sección 9 (Contacto), ninguna
-    construida aún. Apuntando a #experiencia y #contacto (agregado a la
-    sección .cta de cierre) hasta que existan — actualizar ambos href en
-    una sola pasada cuando se construyan.
-  -->
   <section class="hero">
     <div class="container">
       <div class="hero-copy">
@@ -169,40 +150,67 @@
 
       <div class="process-line">
         <div class="process-step reveal">
-          <p class="process-meta">02.2025 – 05.2025</p>
+          <div class="process-meta-row">
+            <p class="process-meta">02.2025 – 05.2025</p>
+            <span class="duration-chip">4 meses</span>
+            <span class="role-badge role-badge-freelance">Freelance</span>
+          </div>
           <h3>Consultor de Procesos <span class="org">— Agromercado – MIDAGRI, Lima</span></h3>
           <p>Implementé gestión por procesos, sensibilizando y entrevistando al personal.</p>
           <p>Levanté fichas de caracterización, mapeé procesos e identifiqué cuellos de botella.</p>
+          <p class="exp-tags">BPM · Mapeo de Procesos · Análisis de Cuellos de Botella</p>
         </div>
         <div class="process-step reveal">
-          <p class="process-meta">2023 – 2024</p>
+          <div class="process-meta-row">
+            <p class="process-meta">2023 – 2024</p>
+            <span class="role-badge role-badge-international">Internacional</span>
+          </div>
           <h3>Experiencia Internacional <span class="org">— Australia y Nueva Zelanda</span></h3>
           <p>Analicé dinámicas de empresas de mayor escala: supervisión por métricas, rotación y especialización de puestos.</p>
           <p>Realicé control de calidad mediante muestreos aleatorios; desarrollé comunicación intercultural y gestión del tiempo.</p>
+          <p class="exp-tags">Gestión por Métricas · Control de Calidad · Comunicación Intercultural</p>
         </div>
         <div class="process-step reveal">
-          <p class="process-meta">01.2022 – 03.2023</p>
+          <div class="process-meta-row">
+            <p class="process-meta">01.2022 – 03.2023</p>
+            <span class="duration-chip">14 meses</span>
+            <span class="role-badge role-badge-founder">Fundador</span>
+          </div>
           <h3>Fundador <span class="org">— Isavela Home, Lima</span></h3>
           <p>Desarrollé la marca y gestioné la operación integral: producción, logística y e-commerce.</p>
           <p>Reduje los defectos de producción en 90%, mejorando la satisfacción y retención de clientes.</p>
+          <p class="exp-tags">Producción · Logística · E-commerce · Control de Calidad</p>
         </div>
         <div class="process-step reveal">
-          <p class="process-meta">06.2019 – 03.2021</p>
+          <div class="process-meta-row">
+            <p class="process-meta">06.2019 – 03.2021</p>
+            <span class="duration-chip">21 meses</span>
+            <span class="role-badge role-badge-employee">Dependiente</span>
+          </div>
           <h3>Asistente de Administración <span class="org">— Edificio Esmeralda, Lima</span></h3>
           <p>Implementé un programa de mantenimiento preventivo que garantizó 100% de funcionalidad.</p>
           <p>Supervisé un equipo de 5 personas y fomenté una cultura de mantenimiento proactivo.</p>
+          <p class="exp-tags">Mantenimiento Preventivo · Liderazgo de Equipos</p>
         </div>
         <div class="process-step reveal">
-          <p class="process-meta">2017</p>
+          <div class="process-meta-row">
+            <p class="process-meta">2017</p>
+            <span class="role-badge role-badge-freelance">Freelance</span>
+          </div>
           <h3>Asesor Externo en Gestión de Procesos <span class="org">— Cadena Xima Hotels, Lima</span></h3>
           <p>Elaboré manuales de procedimientos y mejoré procesos para múltiples propiedades de la cadena.</p>
           <p>Mapeé procesos y levanté fichas de caracterización por propiedad, identificando puntos de fricción operativa comunes entre sedes.</p>
+          <p class="exp-tags">BPM · SIPOC · Mapeo de Procesos</p>
         </div>
         <div class="process-step reveal">
-          <p class="process-meta">2015 – 2022</p>
+          <div class="process-meta-row">
+            <p class="process-meta">2015 – 2022</p>
+            <span class="role-badge role-badge-freelance">Freelance</span>
+          </div>
           <h3>Consultor de Procesos y Apoyo Administrativo <span class="org">— Lima</span></h3>
           <p>Ejecuté proyectos de inventariado, elaboración de manuales MOF, mapeo y caracterización de procesos.</p>
           <p>Participé en diseño de planta, análisis de información y consultorías puntuales.</p>
+          <p class="exp-tags">Mapeo de Procesos · Manuales MOF · Diseño de Planta</p>
         </div>
       </div>
 
