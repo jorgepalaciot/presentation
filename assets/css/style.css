@@ -71,9 +71,6 @@ section { padding-block: var(--sp-6); }
   top: 0;
   z-index: 40;
 
-  /* Default state: solid, theme-following. Pages with a full-bleed hero
-     override these variables to "transparent + light text" while the
-     hero is on screen — see body[data-has-hero] rules below. */
   --hdr-fg: var(--text);
   --hdr-fg-muted: var(--text-muted);
   --hdr-bg: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -89,8 +86,6 @@ section { padding-block: var(--sp-6); }
   transition: background-color 320ms ease, border-color 320ms ease;
 }
 
-/* While the hero is in view on pages that have one: transparent header,
-   light foreground, no divider — floats over the hero artwork/color. */
 body[data-has-hero="true"] .site-header:not(.is-scrolled) {
   --hdr-fg: var(--hero-text);
   --hdr-fg-muted: var(--hero-text-muted);
@@ -102,11 +97,6 @@ body[data-has-hero="true"] .site-header:not(.is-scrolled) {
   --hdr-btn-bg: transparent;
 }
 
-/* En páginas con hero, el header debe FLOTAR sobre el fondo del hero, no
-   empujarlo hacia abajo. sticky reserva su propia altura en el flujo, así
-   que el hero nunca llega a estar realmente detrás de él. fixed saca al
-   header del flujo solo en páginas con hero; las páginas sin hero siguen
-   usando el sticky normal. */
 body[data-has-hero="true"] .site-header {
   position: fixed;
   top: 0;
@@ -172,7 +162,7 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 
 .hero {
   min-height: 100svh;
-  min-height: 100vh; /* fallback for browsers without svh support */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   background: radial-gradient(ellipse 90% 60% at 75% 20%, var(--hero-bg-2), var(--hero-bg) 65%);
@@ -193,7 +183,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .hero h1 em { font-style: italic; color: var(--hero-accent); }
 .hero-sub { font-size: var(--step-1); color: var(--hero-text-muted); max-width: 38ch; margin-top: var(--sp-3); }
 
-/* Role title, shown between the name (h1) and the tagline (.hero-sub) */
 .hero-role {
   font-family: var(--font-body);
   font-size: var(--step-1);
@@ -218,7 +207,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .tag.tag-green { background: var(--tag-green-bg); color: var(--tag-green-text); }
 .tag.tag-amber { background: var(--tag-amber-bg); color: var(--tag-amber-text); }
 
-/* Availability badges (freelance / full-time), shown below the tagline */
 .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: var(--sp-3); }
 
 .badge-pill {
@@ -255,9 +243,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .btn-ghost { background: transparent; border-color: var(--border-strong); color: var(--text); }
 .btn-ghost:hover { border-color: var(--text); }
 
-/* Hero sits on its own fixed dark palette regardless of the light/dark
-   toggle, so its buttons need their own contrast pairing instead of the
-   theme-driven .btn-primary/.btn-ghost colors above. */
 .hero .btn-primary { background: var(--hero-text); color: var(--hero-bg); }
 .hero .btn-primary:hover { background: var(--hero-accent); color: var(--hero-bg); }
 .hero .btn-ghost { border-color: rgba(245, 242, 234, 0.35); color: var(--hero-text); }
@@ -368,6 +353,69 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .process-step .org { color: var(--accent); font-weight: 600; }
 .process-step p { color: var(--text-muted); margin-top: 0.5rem; max-width: 60ch; }
 
+/* ---- NEW: meta row wrapper (date + duration chip + role badge) ----
+   Replaces the standalone .process-meta as the first line of each step.
+   Kept as a flex row so it wraps cleanly on mobile without breaking the
+   existing .process-meta styling (still applied to the date itself). */
+.process-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.process-meta-row .process-meta { margin-bottom: 0; }
+
+/* ---- NEW: duration chip — only rendered where the source dates have
+   month-level precision (see content rules). Neutral color so it reads
+   as metadata, not as a claim. ---- */
+.duration-chip {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.2em 0.65em;
+  white-space: nowrap;
+}
+
+/* ---- NEW: role-type badge — distinguishes independent consulting from
+   founder/employee/international roles at a glance. Reuses the existing
+   tag color tokens so it stays inside the established palette instead
+   of introducing new colors. ---- */
+.role-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.2em 0.65em;
+  white-space: nowrap;
+}
+
+.role-badge-freelance { background: var(--tag-blue-bg); color: var(--tag-blue-text); }
+.role-badge-founder { background: var(--tag-green-bg); color: var(--tag-green-text); }
+.role-badge-employee { background: var(--tag-amber-bg); color: var(--tag-amber-text); }
+.role-badge-international { background: var(--accent-soft); color: var(--accent-strong); border: 1px solid var(--accent-soft-border); }
+
+/* ---- NEW: per-role skill tags — same visual language as .project-tags
+   in the Real Cases / Projects sections, so a reclutador who has already
+   scanned those cards recognizes the pattern immediately here. Content
+   is pulled only from bullets already published in each role, never new
+   claims. ---- */
+.process-step .exp-tags {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 0.7rem;
+  margin-bottom: 0;
+  max-width: none;
+}
+
 /* ---------------- Projects list (numbered, clickable — home teaser + full /proyectos/ list) ---------------- */
 
 .project-list { margin-top: var(--sp-4); }
@@ -441,8 +489,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   color: var(--text-muted);
 }
 
-/* Same tag styling, reused standalone (not inside a card) on individual
-   project article pages — bigger, muted rather than faint. */
 .prose .project-tags {
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -496,9 +542,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 
 .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.3rem; }
 
-/* Certifications & Diplomas — grouped into card-like columns instead of
-   a flat stacked list, so "Core Specialization" reads as the anchor
-   credential rather than competing visually with supporting courses. */
 .cert-groups {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
