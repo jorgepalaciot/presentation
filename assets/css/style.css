@@ -346,6 +346,8 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
   border-radius: 50%;
   background: var(--bg);
   border: 2px solid var(--accent);
+  transition: background-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  transform-origin: center;
 }
 
 .process-meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
