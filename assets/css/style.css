@@ -477,8 +477,6 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 .experience-aside {
   position: sticky;
   top: calc(var(--sp-4) + 90px);
-  max-height: calc(100vh - var(--sp-4) - 90px - var(--sp-4));
-  overflow-y: auto;
 }
 
 .stat-card {
