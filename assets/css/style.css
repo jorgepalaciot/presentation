@@ -351,10 +351,46 @@ nav.primary-nav a[aria-current="page"] { color: var(--hdr-fg); font-weight: 600;
 }
 
 .process-meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
-.process-step h3 { font-size: var(--step-1); font-family: var(--font-body); font-weight: 700; }
+.process-step h3 { font-size: var(--step-1); font-family: var(--font-body); font-weight: 700; transition: color 220ms ease; }
 .process-step .org { color: var(--accent); font-weight: 600; }
 .process-step p { color: var(--text-muted); margin-top: 0.5rem; max-width: 60ch; }
 
+/* Segmento de línea propio de cada bloque: se superpone al borde
+   continuo de .process-line y solo se colorea en hover. Al ser
+   position:absolute queda fuera del flujo, así que no mueve nada. */
+.process-step::after {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--sp-4) - 1px);
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background-color 220ms ease;
+  pointer-events: none;
+}
+
+.process-step:hover::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
+  transform: scale(1.35);
+}
+
+.process-step:hover::after {
+  background: var(--accent);
+}
+
+.process-step:hover h3 {
+  color: var(--accent-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-step::before,
+  .process-step::after,
+  .process-step h3 {
+    transition: none;
+  }
+}
 /* ---- NEW: meta row wrapper (date + duration chip + role badge) ----
    Replaces the standalone .process-meta as the first line of each step.
    Kept as a flex row so it wraps cleanly on mobile without breaking the
